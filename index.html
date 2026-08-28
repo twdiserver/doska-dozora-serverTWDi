@@ -47,17 +47,25 @@
             color: #b22234;
             font-weight: 600;
         }
+        /* --- СТИЛИ ДЛЯ СЧЁТЧИКА --- */
         .views-counter {
             text-align: center;
-            font-size: 16px;
-            color: #b22234;
+            font-size: 18px;
             font-weight: bold;
+            color: #b22234;
+            background: #f8f9fa;
+            padding: 10px 0;
             margin-top: -12px;
             margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px dashed #d0d7de;
         }
         .views-counter span {
             color: #1f2328;
+            font-weight: 700;
+            font-size: 20px;
         }
+        /* --------------------------- */
         .table-wrap {
             overflow-x: auto;
             border-radius: 12px;
@@ -148,7 +156,7 @@
 <body>
 <div class="container">
     <h1>⬡ ДОСКА ПОЗОРА ⬡</h1>
-    <div class="subtitle">TWDi · Античит-мониторинг · <span>SMAC + Lilac</span> · 06.06 – 22.08.2026</div>
+    <div class="subtitle">TWDi · Античит-мониторинг · <span>SMAC + Lilac</span> · 06.06 – 25.08.2026</div>
 
     <!-- ===== СЧЁТЧИК ПРОСМОТРОВ (SiteViews) ===== -->
     <div class="views-counter">
@@ -170,6 +178,26 @@
                 </tr>
             </thead>
             <tbody>
+                <!-- ===== (АтОмНыЙ ДиЛдАк) — ПЕРВАЯ СТРОКА ===== -->
+                <tr class="highlight-row">
+                    <td>22.06 – 17.07</td>
+                    <td>
+                        <strong>(АтОмНыЙ ДиЛдАк)</strong>
+                        <span class="record-badge">⭐ РЕКОРДСМЕН</span>
+                    </td>
+                    <td class="steam-id">STEAM_1:0:596248935</td>
+                    <td>
+                        Auto-Fire (×6) + Aimbot (×2)
+                        <span class="violation-small">Всего нарушений: 8</span>
+                    </td>
+                    <td>SMAC + Lilac</td>
+                    <td>
+                        <span class="badge badge-ban">БАН (×6)</span>
+                        <span style="margin:0 2px;">+</span>
+                        <span class="badge badge-suspect">ПОДОЗР. (×2)</span>
+                    </td>
+                </tr>
+
                 <!-- 1 -->
                 <tr><td>06.06 – 08.07</td><td>ТОЛСТЫЙ КОТ</td><td class="steam-id">STEAM_1:1:925144230</td><td>ConVar + Aimbot</td><td>SMAC + Lilac</td><td><span class="badge badge-ban">БАН (×2)</span></td></tr>
                 <!-- 2 -->
@@ -232,49 +260,32 @@
                 <tr><td>16.08</td><td>ℍ𝕣𝕚𝕤𝕥𝕚𝕒𝕟</td><td class="steam-id">STEAM_1:1:642174354</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
                 <!-- 31 -->
                 <tr><td>18.08</td><td>ZOV</td><td class="steam-id">STEAM_1:1:925144230</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
-                <!-- 32 -->
-                <tr><td>18.08</td><td>kl</td><td class="steam-id">STEAM_1:1:403430657</td><td>Macro Auto-Jump (5 детектов)</td><td>Lilac</td><td><span class="badge badge-detect">ДЕТЕКТЫ, БЕЗ БАНА</span></td></tr>
-
-                <!-- ===== (АтОмНыЙ ДиЛдАк) — ОБЪЕДИНЁННАЯ СТРОКА ===== -->
-                <tr class="highlight-row">
-                    <td>22.06 – 17.07</td>
-                    <td>
-                        <strong>(АтОмНыЙ ДиЛдАк)</strong>
-                        <span class="record-badge">⭐ РЕКОРДСМЕН</span>
-                    </td>
-                    <td class="steam-id">STEAM_1:0:596248935</td>
-                    <td>
-                        Auto-Fire (×6) + Aimbot (×2)
-                        <span class="violation-small">Всего нарушений: 8</span>
-                    </td>
-                    <td>SMAC + Lilac</td>
-                    <td>
-                        <span class="badge badge-ban">БАН (×6)</span>
-                        <span style="margin:0 2px;">+</span>
-                        <span class="badge badge-suspect">ПОДОЗР. (×2)</span>
-                    </td>
-                </tr>
-
-                <!-- ===== TrjJ27 — ОБЫЧНАЯ ЗАПИСЬ ===== -->
+                <!-- 32 (объединённая строка: kl + пп) -->
                 <tr>
-                    <td>22.08</td>
-                    <td>TrjJ27</td>
-                    <td class="steam-id">STEAM_1:1:919086356</td>
-                    <td>ConVar r_aspectratio</td>
-                    <td>SMAC (cvars)</td>
-                    <td><span class="badge badge-ban">БАН</span></td>
+                    <td>18.08 – 25.08</td>
+                    <td>kl / пп</td>
+                    <td class="steam-id">STEAM_1:1:403430657</td>
+                    <td>Macro Auto-Jump (5 + 4 детектов)</td>
+                    <td>Lilac</td>
+                    <td><span class="badge badge-detect">ДЕТЕКТЫ, БЕЗ БАНА</span></td>
                 </tr>
+                <!-- 33 -->
+                <tr><td>22.08</td><td>TrjJ27</td><td class="steam-id">STEAM_1:1:919086356</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
+                <!-- 34 -->
+                <tr><td>25.08</td><td>NIKITA_PRO</td><td class="steam-id">STEAM_1:0:176362383</td><td>Spinhack (подозрение)</td><td>SMAC</td><td><span class="badge badge-suspect">ПОДОЗРЕНИЕ</span></td></tr>
+
             </tbody>
         </table>
     </div>
 
     <div class="footer-note">
-        ⚡ <strong>Всего записей:</strong> 34 · <strong>Банов:</strong> 22 · <strong>Подозрений:</strong> 6 · <strong>Киков:</strong> 3 · <strong>Детектов без бана:</strong> 2<br>
+        ⚡ <strong>Всего записей:</strong> 34 · <strong>Банов:</strong> 22 · <strong>Подозрений:</strong> 7 · <strong>Киков:</strong> 3 · <strong>Детектов без бана:</strong> 2<br>
+        <span style="font-size:12px; color:#888;">📌 Примечание: Игроки <strong>kl</strong> и <strong>пп</strong> — один и тот же человек (SteamID: STEAM_1:1:403430657).</span><br>
         © 2026 · TWDi Античит-мониторинг · Все нарушители занесены в «Доску позора»
     </div>
 </div>
 
-<!-- ===== СКРИПТ СЧЁТЧИКА ===== -->
+<!-- ===== КОД СЧЁТЧИКА SITEVIEWS ===== -->
 <script
     src="https://unpkg.com/siteviews@2.1.2/dist/index.js"
     type="application/javascript"
@@ -282,7 +293,7 @@
     project-name="doska-pozora"
     output-element-id="views"
 ></script>
-<!-- =========================== -->
+<!-- ================================= -->
 
 </body>
 </html>
