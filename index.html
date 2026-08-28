@@ -47,6 +47,17 @@
             color: #b22234;
             font-weight: 600;
         }
+        .views-counter {
+            text-align: center;
+            font-size: 16px;
+            color: #b22234;
+            font-weight: bold;
+            margin-top: -12px;
+            margin-bottom: 20px;
+        }
+        .views-counter span {
+            color: #1f2328;
+        }
         .table-wrap {
             overflow-x: auto;
             border-radius: 12px;
@@ -138,6 +149,12 @@
 <div class="container">
     <h1>⬡ ДОСКА ПОЗОРА ⬡</h1>
     <div class="subtitle">TWDi · Античит-мониторинг · <span>SMAC + Lilac</span> · 06.06 – 22.08.2026</div>
+
+    <!-- ===== СЧЁТЧИК ПРОСМОТРОВ (SiteViews) ===== -->
+    <div class="views-counter">
+        👁️ Просмотров: <span id="views">Загрузка...</span>
+    </div>
+    <!-- ========================================== -->
 
     <!-- Основная таблица -->
     <div class="table-wrap">
@@ -256,5 +273,16 @@
         © 2026 · TWDi Античит-мониторинг · Все нарушители занесены в «Доску позора»
     </div>
 </div>
+
+<!-- ===== СКРИПТ СЧЁТЧИКА ===== -->
+<script
+    src="https://unpkg.com/siteviews@2.1.2/dist/index.js"
+    type="application/javascript"
+    scriptfor="siteviews"
+    project-name="doska-pozora"
+    output-element-id="views"
+></script>
+<!-- =========================== -->
+
 </body>
 </html>
