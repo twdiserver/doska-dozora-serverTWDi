@@ -117,6 +117,76 @@
         .badge-suspect { background: #fff8c5; color: #9a6700; }
         .badge-detect { background: #e1e8f0; color: #4a5a7a; }
 
+        td a {
+            color: #0969da;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        td a:hover {
+            text-decoration: underline;
+            color: #0550ae;
+        }
+
+        /* ===== СТИЛИ ДЛЯ БОЛЬШОГО ПРИЗЫВА ===== */
+        .call-to-action {
+            margin-top: 30px;
+            padding: 25px 20px;
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+            border: 3px solid #b22234;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(178, 34, 52, 0.15);
+        }
+        .call-to-action .big-icon {
+            font-size: 48px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .call-to-action h2 {
+            color: #b22234;
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+        .call-to-action p {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto 8px;
+        }
+        .call-to-action .highlight-red {
+            color: #b22234;
+            font-weight: 700;
+        }
+        .call-to-action .highlight-blue {
+            color: #0969da;
+            font-weight: 600;
+        }
+        .call-to-action .small-note {
+            font-size: 14px;
+            color: #656d76;
+            margin-top: 12px;
+        }
+        .call-to-action .click-hint {
+            display: inline-block;
+            background: #b22234;
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 8px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        /* ==================================== */
+
         .footer-note {
             margin-top: 25px;
             text-align: center;
@@ -176,11 +246,11 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- ===== (АтОмНыЙ ДиЛдАк) — ПЕРВАЯ СТРОКА ===== -->
+                <!-- ===== (АтОмНыЙ ДиЛдАк) ===== -->
                 <tr class="highlight-row">
                     <td>22.06 – 17.07</td>
                     <td>
-                        <strong>(АтОмНыЙ ДиЛдАк)</strong>
+                        <strong><a href="https://steamcommunity.com/profiles/76561199152814638" target="_blank">(АтОмНыЙ ДиЛдАк)</a></strong>
                         <span class="record-badge">⭐ РЕКОРДСМЕН</span>
                     </td>
                     <td class="steam-id">STEAM_1:0:596248935</td>
@@ -197,84 +267,84 @@
                 </tr>
 
                 <!-- 1 -->
-                <tr><td>06.06 – 08.07</td><td>ТОЛСТЫЙ КОТ</td><td class="steam-id">STEAM_1:1:925144230</td><td>ConVar + Aimbot</td><td>SMAC + Lilac</td><td><span class="badge badge-ban">БАН (×2)</span></td></tr>
+                <tr><td>06.06 – 08.07</td><td><a href="https://steamcommunity.com/profiles/76561161185709988" target="_blank">ТОЛСТЫЙ КОТ</a></td><td class="steam-id">STEAM_1:1:925144230</td><td>ConVar + Aimbot</td><td>SMAC + Lilac</td><td><span class="badge badge-ban">БАН (×2)</span></td></tr>
                 <!-- 2 -->
-                <tr><td>11.06</td><td>Little</td><td class="steam-id">STEAM_1:1:935325296</td><td>BunnyHop</td><td>SMAC</td><td><span class="badge badge-suspect">ПОДОЗРЕНИЕ</span></td></tr>
+                <tr><td>11.06</td><td><a href="https://steamcommunity.com/profiles/76561198933716320" target="_blank">Little</a></td><td class="steam-id">STEAM_1:1:935325296</td><td>BunnyHop</td><td>SMAC</td><td><span class="badge badge-suspect">ПОДОЗРЕНИЕ</span></td></tr>
                 <!-- 3 -->
-                <tr><td>13.06 – 26.06</td><td>cantlost</td><td class="steam-id">STEAM_1:1:615400981</td><td>BunnyHop (×2)</td><td>Lilac + SMAC</td><td><span class="badge badge-ban">БАН (×2)</span></td></tr>
+                <tr><td>13.06 – 26.06</td><td><a href="https://steamcommunity.com/profiles/76561198965266690" target="_blank">cantlost</a></td><td class="steam-id">STEAM_1:1:615400981</td><td>BunnyHop (×2)</td><td>Lilac + SMAC</td><td><span class="badge badge-ban">БАН (×2)</span></td></tr>
                 <!-- 4 -->
-                <tr><td>16.06</td><td>damner`</td><td class="steam-id">STEAM_1:1:59424645</td><td>Aimbot (Autoshoot)</td><td>Lilac</td><td><span class="badge badge-suspect">ПОДОЗРЕНИЕ</span></td></tr>
+                <tr><td>16.06</td><td><a href="https://steamcommunity.com/profiles/76561198070415018" target="_blank">damner`</a></td><td class="steam-id">STEAM_1:1:59424645</td><td>Aimbot (Autoshoot)</td><td>Lilac</td><td><span class="badge badge-suspect">ПОДОЗРЕНИЕ</span></td></tr>
                 <!-- 5 -->
-                <tr><td>18.06</td><td>-=[StreetFlash]=-</td><td class="steam-id">STEAM_1:1:27262762</td><td>BunnyHop (×3)</td><td>SMAC</td><td><span class="badge badge-suspect">ПОДОЗРЕНИЕ (×3)</span></td></tr>
+                <tr><td>18.06</td><td><a href="https://steamcommunity.com/profiles/76561198014791252" target="_blank">-=[StreetFlash]=-</a></td><td class="steam-id">STEAM_1:1:27262762</td><td>BunnyHop (×3)</td><td>SMAC</td><td><span class="badge badge-suspect">ПОДОЗРЕНИЕ (×3)</span></td></tr>
                 <!-- 6 -->
-                <tr><td>19.06</td><td>It</td><td class="steam-id">STEAM_1:0:181501932</td><td>Aimbot (Deviation: 47°)</td><td>SMAC</td><td><span class="badge badge-suspect">ПОДОЗРЕНИЕ</span></td></tr>
+                <tr><td>19.06</td><td><a href="https://steamcommunity.com/profiles/76561198023269592" target="_blank">It</a></td><td class="steam-id">STEAM_1:0:181501932</td><td>Aimbot (Deviation: 47°)</td><td>SMAC</td><td><span class="badge badge-suspect">ПОДОЗРЕНИЕ</span></td></tr>
                 <!-- 7 -->
-                <tr><td>21.06</td><td>Ghost</td><td class="steam-id">STEAM_1:0:799559716</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
+                <tr><td>21.06</td><td><a href="https://steamcommunity.com/profiles/76561198920185160" target="_blank">Ghost</a></td><td class="steam-id">STEAM_1:0:799559716</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
                 <!-- 8 -->
-                <tr><td>22.06</td><td>NICVE-PRO.2013</td><td class="steam-id">STEAM_1:0:926933437</td><td>Speedhack</td><td>SMAC</td><td><span class="badge badge-suspect">ПОДОЗРЕНИЕ</span></td></tr>
+                <tr><td>22.06</td><td><a href="https://steamcommunity.com/profiles/76561198913932602" target="_blank">NICVE-PRO.2013</a></td><td class="steam-id">STEAM_1:0:926933437</td><td>Speedhack</td><td>SMAC</td><td><span class="badge badge-suspect">ПОДОЗРЕНИЕ</span></td></tr>
                 <!-- 9 -->
-                <tr><td>22.06</td><td>M@rgo</td><td class="steam-id">STEAM_1:1:64110244</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
+                <tr><td>22.06</td><td><a href="https://steamcommunity.com/profiles/76561198088386216" target="_blank">M@rgo</a></td><td class="steam-id">STEAM_1:1:64110244</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
                 <!-- 10 -->
-                <tr><td>23.06</td><td>alehpronud</td><td class="steam-id">STEAM_1:0:681685357</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
+                <tr><td>23.06</td><td><a href="https://steamcommunity.com/profiles/76561198123446442" target="_blank">alehpronud</a></td><td class="steam-id">STEAM_1:0:681685357</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
                 <!-- 11 -->
-                <tr><td>23.06</td><td>супер романтика</td><td class="steam-id">STEAM_1:0:461925150</td><td>BunnyHop (Bhops: 20)</td><td>Lilac</td><td><span class="badge badge-ban">БАН</span></td></tr>
+                <tr><td>23.06</td><td><a href="https://steamcommunity.com/profiles/76561198023091028" target="_blank">супер романтика</a></td><td class="steam-id">STEAM_1:0:461925150</td><td>BunnyHop (Bhops: 20)</td><td>Lilac</td><td><span class="badge badge-ban">БАН</span></td></tr>
                 <!-- 12 -->
-                <tr><td>28.06</td><td>Willy Fox</td><td class="steam-id">STEAM_1:1:35874000</td><td>Спам команд (-jimp)</td><td>SMAC</td><td><span class="badge badge-kick">КИК</span></td></tr>
+                <tr><td>28.06</td><td><a href="https://steamcommunity.com/profiles/76561198032013728" target="_blank">Willy Fox</a></td><td class="steam-id">STEAM_1:1:35874000</td><td>Спам команд (-jimp)</td><td>SMAC</td><td><span class="badge badge-kick">КИК</span></td></tr>
                 <!-- 13 -->
-                <tr><td>28.06</td><td>Masлиna</td><td class="steam-id">STEAM_1:1:218044541</td><td>BunnyHop</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
+                <tr><td>28.06</td><td><a href="https://steamcommunity.com/profiles/76561198003954810" target="_blank">Masлиna</a></td><td class="steam-id">STEAM_1:1:218044541</td><td>BunnyHop</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
                 <!-- 14 -->
-                <tr><td>02.07</td><td>Les</td><td class="steam-id">STEAM_1:1:449508622</td><td>Подозрение + Auto-Fire</td><td>Lilac + SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
+                <tr><td>02.07</td><td><a href="https://steamcommunity.com/profiles/76561198909278972" target="_blank">Les</a></td><td class="steam-id">STEAM_1:1:449508622</td><td>Подозрение + Auto-Fire</td><td>Lilac + SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
                 <!-- 15 -->
-                <tr><td>03.07</td><td>ReffyPoo</td><td class="steam-id">STEAM_1:0:83509211</td><td>Спам команд (bugpause)</td><td>SMAC</td><td><span class="badge badge-kick">КИК</span></td></tr>
+                <tr><td>03.07</td><td><a href="https://steamcommunity.com/profiles/76561198027284150" target="_blank">ReffyPoo</a></td><td class="steam-id">STEAM_1:0:83509211</td><td>Спам команд (bugpause)</td><td>SMAC</td><td><span class="badge badge-kick">КИК</span></td></tr>
                 <!-- 16 -->
-                <tr><td>04.07</td><td>Moxxie</td><td class="steam-id">STEAM_1:0:901495913</td><td>Auto-Fire</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
+                <tr><td>04.07</td><td><a href="https://steamcommunity.com/profiles/76561198963256954" target="_blank">Moxxie</a></td><td class="steam-id">STEAM_1:0:901495913</td><td>Auto-Fire</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
                 <!-- 17 -->
-                <tr><td>04.07</td><td>kami</td><td class="steam-id">STEAM_1:1:949843564</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
+                <tr><td>04.07</td><td><a href="https://steamcommunity.com/profiles/76561198909954856" target="_blank">kami</a></td><td class="steam-id">STEAM_1:1:949843564</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
                 <!-- 18 -->
-                <tr><td>05.07</td><td>5</td><td class="steam-id">STEAM_1:0:879395933</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
+                <tr><td>05.07</td><td><a href="https://steamcommunity.com/profiles/76561198919411994" target="_blank">5</a></td><td class="steam-id">STEAM_1:0:879395933</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
                 <!-- 19 -->
-                <tr><td>05.07</td><td>TROFIM_STEKLOVATA</td><td class="steam-id">STEAM_1:1:364762701</td><td>Спам команд (joy_variable_frametime)</td><td>SMAC</td><td><span class="badge badge-kick">КИК</span></td></tr>
+                <tr><td>05.07</td><td><a href="https://steamcommunity.com/profiles/76561198125590130" target="_blank">TROFIM_STEKLOVATA</a></td><td class="steam-id">STEAM_1:1:364762701</td><td>Спам команд (joy_variable_frametime)</td><td>SMAC</td><td><span class="badge badge-kick">КИК</span></td></tr>
                 <!-- 20 -->
-                <tr><td>09.07</td><td>ℓυcү ♪ ♫</td><td class="steam-id">STEAM_1:1:418814752</td><td>Aimbot (Angle-Repeat ×2)</td><td>Lilac</td><td><span class="badge badge-suspect">ПОДОЗРЕНИЕ (×2)</span></td></tr>
+                <tr><td>09.07</td><td><a href="https://steamcommunity.com/profiles/76561198984395232" target="_blank">ℓυcү ♪ ♫</a></td><td class="steam-id">STEAM_1:1:418814752</td><td>Aimbot (Angle-Repeat ×2)</td><td>Lilac</td><td><span class="badge badge-suspect">ПОДОЗРЕНИЕ (×2)</span></td></tr>
                 <!-- 21 -->
-                <tr><td>10.07</td><td>5 pos nyasha <3</td><td class="steam-id">STEAM_1:1:523895160</td><td>Auto-Fire</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
+                <tr><td>10.07</td><td><a href="https://steamcommunity.com/profiles/76561199008456048" target="_blank">5 pos nyasha <3</a></td><td class="steam-id">STEAM_1:1:523895160</td><td>Auto-Fire</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
                 <!-- 22 -->
-                <tr><td>10.07</td><td>Hand$ome Devil</td><td class="steam-id">STEAM_1:1:86827071</td><td>BunnyHop</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
+                <tr><td>10.07</td><td><a href="https://steamcommunity.com/profiles/76561198033919870" target="_blank">Hand$ome Devil</a></td><td class="steam-id">STEAM_1:1:86827071</td><td>BunnyHop</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
                 <!-- 23 -->
-                <tr><td>12.07</td><td>Da sepp</td><td class="steam-id">STEAM_1:0:846514764</td><td>Aimbot (Autoshoot) + Auto-Fire</td><td>Lilac + SMAC</td><td><span class="badge badge-ban">БАН (SMAC)</span> + <span class="badge badge-suspect">ПОДОЗР. (Lilac)</span></td></tr>
+                <tr><td>12.07</td><td><a href="https://steamcommunity.com/profiles/76561199053275256" target="_blank">Da sepp</a></td><td class="steam-id">STEAM_1:0:846514764</td><td>Aimbot (Autoshoot) + Auto-Fire</td><td>Lilac + SMAC</td><td><span class="badge badge-ban">БАН (SMAC)</span> + <span class="badge badge-suspect">ПОДОЗР. (Lilac)</span></td></tr>
                 <!-- 24 -->
-                <tr><td>17.07</td><td>vemiu</td><td class="steam-id">STEAM_1:1:622630204</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
+                <tr><td>17.07</td><td><a href="https://steamcommunity.com/profiles/76561199082868136" target="_blank">vemiu</a></td><td class="steam-id">STEAM_1:1:622630204</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
                 <!-- 25 -->
-                <tr><td>22.07</td><td>VerW</td><td class="steam-id">STEAM_1:1:773958329</td><td>Macro Auto-Shoot (4 детекта)</td><td>Lilac</td><td><span class="badge badge-detect">ДЕТЕКТЫ, БЕЗ БАНА</span></td></tr>
+                <tr><td>22.07</td><td><a href="https://steamcommunity.com/profiles/76561199054132386" target="_blank">VerW</a></td><td class="steam-id">STEAM_1:1:773958329</td><td>Macro Auto-Shoot (4 детекта)</td><td>Lilac</td><td><span class="badge badge-detect">ДЕТЕКТЫ, БЕЗ БАНА</span></td></tr>
                 <!-- 26 -->
-                <tr><td>24.07</td><td>bless</td><td class="steam-id">STEAM_1:0:790543909</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
+                <tr><td>24.07</td><td><a href="https://steamcommunity.com/profiles/76561199000878946" target="_blank">bless</a></td><td class="steam-id">STEAM_1:0:790543909</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
                 <!-- 27 -->
-                <tr><td>28.07</td><td>Ruslaniti</td><td class="steam-id">STEAM_1:1:80886589</td><td>Auto-Fire</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
+                <tr><td>28.07</td><td><a href="https://steamcommunity.com/profiles/76561198021138906" target="_blank">Ruslaniti</a></td><td class="steam-id">STEAM_1:1:80886589</td><td>Auto-Fire</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
                 <!-- 28 -->
-                <tr><td>07.08</td><td>петля времени 333</td><td class="steam-id">STEAM_1:1:920884622</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
+                <tr><td>07.08</td><td><a href="https://steamcommunity.com/profiles/76561198904420372" target="_blank">петля времени 333</a></td><td class="steam-id">STEAM_1:1:920884622</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
                 <!-- 29 -->
-                <tr><td>13.08</td><td>inc</td><td class="steam-id">STEAM_1:1:378152486</td><td>Bhop</td><td>Lilac</td><td><span class="badge badge-ban">БАН</span></td></tr>
+                <tr><td>13.08</td><td><a href="https://steamcommunity.com/profiles/76561198939276700" target="_blank">inc</a></td><td class="steam-id">STEAM_1:1:378152486</td><td>Bhop</td><td>Lilac</td><td><span class="badge badge-ban">БАН</span></td></tr>
                 <!-- 30 -->
-                <tr><td>16.08</td><td>ℍ𝕣𝕚𝕤𝕥𝕚𝕒𝕟</td><td class="steam-id">STEAM_1:1:642174354</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
+                <tr><td>16.08</td><td><a href="https://steamcommunity.com/profiles/76561198903292436" target="_blank">ℍ𝕣𝕚𝕤𝕥𝕚𝕒𝕟</a></td><td class="steam-id">STEAM_1:1:642174354</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
                 <!-- 31 -->
-                <tr><td>18.08</td><td>ZOV</td><td class="steam-id">STEAM_1:1:925144230</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
-                <!-- 32 (объединённая строка: kl + пп) -->
+                <tr><td>18.08</td><td><a href="https://steamcommunity.com/profiles/76561161185709988" target="_blank">ZOV</a></td><td class="steam-id">STEAM_1:1:925144230</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
+                <!-- 32 -->
                 <tr>
                     <td>18.08 – 25.08</td>
-                    <td>kl / пп</td>
+                    <td><a href="https://steamcommunity.com/profiles/76561198966506842" target="_blank">kl / пп</a></td>
                     <td class="steam-id">STEAM_1:1:403430657</td>
                     <td>Macro Auto-Jump (5 + 4 детектов)</td>
                     <td>Lilac</td>
                     <td><span class="badge badge-detect">ДЕТЕКТЫ, БЕЗ БАНА</span></td>
                 </tr>
                 <!-- 33 -->
-                <tr><td>22.08</td><td>TrjJ27</td><td class="steam-id">STEAM_1:1:919086356</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
+                <tr><td>22.08</td><td><a href="https://steamcommunity.com/profiles/76561198984048140" target="_blank">TrjJ27</a></td><td class="steam-id">STEAM_1:1:919086356</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
                 <!-- 34 -->
-                <tr><td>25.08</td><td>NIKITA_PRO</td><td class="steam-id">STEAM_1:0:176362383</td><td>Spinhack (подозрение)</td><td>SMAC</td><td><span class="badge badge-suspect">ПОДОЗРЕНИЕ</span></td></tr>
+                <tr><td>25.08</td><td><a href="https://steamcommunity.com/profiles/76561198112728194" target="_blank">NIKITA_PRO</a></td><td class="steam-id">STEAM_1:0:176362383</td><td>Spinhack (подозрение)</td><td>SMAC</td><td><span class="badge badge-suspect">ПОДОЗРЕНИЕ</span></td></tr>
                 <!-- 35 -->
                 <tr>
                     <td>29.08</td>
-                    <td>xxet</td>
+                    <td><a href="https://steamcommunity.com/profiles/76561198920307360" target="_blank">xxet</a></td>
                     <td class="steam-id">STEAM_1:0:930062316</td>
                     <td>ConVar r_aspectratio</td>
                     <td>SMAC</td>
@@ -283,6 +353,23 @@
             </tbody>
         </table>
     </div>
+
+    <!-- ===== БОЛЬШОЙ ПРИЗЫВ К ДЕЙСТВИЮ ===== -->
+    <div class="call-to-action">
+        <span class="big-icon">🚨</span>
+        <h2>Помоги очистить игру от читеров!</h2>
+        <p>
+            👆 <strong>Кликни на никнейм</strong> любого нарушителя — ты перейдёшь на его профиль в Steam.<br>
+            Оформи жалобу (<span class="highlight-red">репорт</span>) на этого игрока!
+        </p>
+        <p>
+            <span class="highlight-red">Чем больше жалоб</span> — тем выше шанс, что Valve заблокирует аккаунт читера!<br>
+            Вместе мы сделаем игру <span class="highlight-blue">чище</span>!
+        </p>
+        <span class="click-hint">👉 НАЖМИ НА НИКНЕЙМ 👈</span>
+        <p class="small-note">❤️ Спасибо за участие в борьбе с нечестной игрой!</p>
+    </div>
+    <!-- ========================================= -->
 
     <div class="footer-note">
         ⚡ <strong>Всего записей:</strong> 35 · <strong>Банов:</strong> 23 · <strong>Подозрений:</strong> 7 · <strong>Киков:</strong> 3 · <strong>Детектов без бана:</strong> 2<br>
