@@ -2,14 +2,10 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Доска позора — TWDi</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
             background: #e8ecf1;
@@ -19,7 +15,7 @@
             min-height: 100vh;
         }
         .container {
-            max-width: 1400px;
+            max-width: 1500px;
             width: 100%;
             background: #ffffff;
             border-radius: 16px;
@@ -70,12 +66,13 @@
             border: 1px solid #d0d7de;
             width: 100%;
             background: #f8f9fa;
+            -webkit-overflow-scrolling: touch;
         }
         table {
             width: 100%;
             border-collapse: collapse;
             font-size: 14px;
-            min-width: 900px;
+            min-width: 1000px;
             background: #ffffff;
         }
         th {
@@ -95,6 +92,7 @@
             text-align: center;
             color: #1f2328;
             background: #ffffff;
+            vertical-align: middle;
         }
         tr:nth-child(even) td { background: #f8f9fa; }
         tr:hover td { background: #eef2f6; }
@@ -120,13 +118,37 @@
             color: #0969da;
             text-decoration: none;
             font-weight: 500;
+            display: inline-block;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
         }
         .profile-link:hover {
             text-decoration: underline;
             color: #0550ae;
         }
 
-        /* ===== НИЖНИЙ БЛОК (ЦЕНТРИРОВАННЫЙ) ===== */
+        .btn-report {
+            display: inline-block;
+            background: #b22234;
+            color: #fff;
+            border: none;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 11px;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-decoration: none;
+            white-space: nowrap;
+            touch-action: manipulation;
+        }
+        .btn-report:hover {
+            background: #8a1a28;
+        }
+        .btn-report.copied {
+            background: #1a7f37;
+        }
+
         .report-block {
             margin-top: 22px;
             padding: 18px 20px;
@@ -150,48 +172,10 @@
         .report-block .step strong {
             color: #b22234;
         }
-        .report-block .template-box {
-            background: #e8ecf1;
-            padding: 8px 14px;
-            border-radius: 6px;
-            font-family: 'Consolas', monospace;
-            font-size: 13px;
-            margin: 8px auto;
-            max-width: 800px;
-            color: #1f2328;
-            border: 1px solid #d0d7de;
-            word-break: break-all;
-            text-align: left;
-            line-height: 1.5;
+        .report-block .highlight-red {
+            color: #b22234;
+            font-weight: 700;
         }
-        .report-block .template-box .line1 {
-            display: block;
-        }
-        .report-block .copy-row {
-            display: flex;
-            justify-content: center;
-            margin: 6px 0 10px 0;
-        }
-        .copy-btn-small {
-            background: #b22234;
-            color: #fff;
-            border: none;
-            padding: 4px 18px;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 13px;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        .copy-btn-small:hover { background: #8a1a28; }
-        .copy-btn-small.copied { background: #1a7f37; }
-        .report-block .bottom-text {
-            font-size: 14px;
-            color: #1f2328;
-            line-height: 1.6;
-            margin-top: 6px;
-        }
-        .report-block .bottom-text .highlight-red { color: #b22234; font-weight: 700; }
 
         .footer-note {
             margin-top: 20px;
@@ -223,18 +207,35 @@
             font-weight: 700;
             margin-left: 4px;
         }
+        .steamid-cell {
+            font-size: 12px;
+            word-break: break-all;
+        }
+        .action-cell {
+            white-space: nowrap;
+        }
+        .td-date { white-space: nowrap; }
+        .td-nick { white-space: nowrap; }
+        .td-violation { white-space: nowrap; }
+
+        @media (max-width: 768px) {
+            .container { padding: 15px 10px; }
+            table { font-size: 12px; min-width: 700px; }
+            th, td { padding: 8px 6px; }
+            .td-violation { white-space: normal; }
+            .steamid-cell { font-size: 11px; }
+        }
     </style>
 </head>
 <body>
 <div class="container">
     <h1>⬡ ДОСКА ПОЗОРА ⬡</h1>
-    <div class="subtitle">TWDi · Античит-мониторинг · <span>SMAC + Lilac</span> · 06.06 – 30.08.2026</div>
+    <div class="subtitle">TWDi · Античит-мониторинг · <span>SMAC + Lilac</span> · 06.06 – 03.09.2026</div>
 
     <div class="views-counter">
         👁️ Просмотров: <span id="views">Загрузка...</span>
     </div>
 
-    <!-- ===== ТАБЛИЦА ===== -->
     <div class="table-wrap">
         <table>
             <thead>
@@ -245,147 +246,812 @@
                     <th>Нарушение</th>
                     <th>Античит</th>
                     <th>Результат</th>
+                    <th>Репорт</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- ===== (АтОмНыЙ ДиЛдАк) ===== -->
+                <!-- ===== ДИЛДАК ===== -->
                 <tr class="highlight-row">
-                    <td>22.06 – 17.07</td>
-                    <td>
-                        <strong><a href="#" class="profile-link" data-steamid="STEAM_1:0:596248935">(АтОмНыЙ ДиЛдАк)</a></strong>
+                    <td class="td-date">22.06 – 17.07</td>
+                    <td class="td-nick">
+                        <strong><a href="#" class="profile-link" data-steamid="STEAM_1:0:596248935" target="_blank">(АтОмНыЙ ДиЛдАк)</a></strong>
                         <span class="record-badge">⭐ РЕКОРДСМЕН</span>
                     </td>
-                    <td class="steam-id">STEAM_1:0:596248935</td>
-                    <td>
-                        Auto-Fire (×6) + Aimbot (×2)
-                        <span class="violation-small">Всего нарушений: 8</span>
-                    </td>
+                    <td class="steam-id steamid-cell">STEAM_1:0:596248935</td>
+                    <td class="td-violation">Auto-Fire (×6) + Aimbot (×2)</td>
                     <td>SMAC + Lilac</td>
-                    <td>
-                        <span class="badge badge-ban">БАН (×6)</span> + <span class="badge badge-suspect">ПОДОЗР. (×2)</span>
+                    <td><span class="badge badge-ban">БАН (×6)</span> + <span class="badge badge-suspect">ПОДОЗР.</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            '(АтОмНыЙ ДиЛдАк)',
+                            'STEAM_1:0:596248935',
+                            '22.06 – 17.07',
+                            'Auto-Fire (×6) + Aimbot (×2)',
+                            'SMAC + Lilac',
+                            'БАН (×6)',
+                            '[smac_autotrigger] Auto-Fire detected multiple times; [lilac] Aimbot detected'
+                        )">📋 Репорт</button>
                     </td>
                 </tr>
-                <!-- 1 -->
+
+                <!-- 1. ТОЛСТЫЙ КОТ / ZOV -->
                 <tr>
-                    <td>06.06 – 18.08</td>
-                    <td><a href="#" class="profile-link" data-steamid="STEAM_1:1:925144230">ТОЛСТЫЙ КОТ / ZOV</a></td>
-                    <td class="steam-id">STEAM_1:1:925144230</td>
-                    <td>ConVar + Aimbot (×2)</td>
+                    <td class="td-date">06.06 – 18.08</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:1:925144230" target="_blank">ТОЛСТЫЙ КОТ / ZOV</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:1:925144230</td>
+                    <td class="td-violation">ConVar + Aimbot (×2)</td>
                     <td>SMAC + Lilac</td>
                     <td><span class="badge badge-ban">БАН (×2)</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            'ТОЛСТЫЙ КОТ / ZOV',
+                            'STEAM_1:1:925144230',
+                            '06.06 – 18.08',
+                            'ConVar r_aspectratio + Aimbot',
+                            'SMAC + Lilac',
+                            'БАН (×2)',
+                            '[smac_cvars] Banned for failing checks on convar \"r_aspectratio\" with invalid value -1082130432'
+                        )">📋 Репорт</button>
+                    </td>
                 </tr>
-                <!-- 2 -->
-                <tr><td>11.06</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:1:935325296">Little</a></td><td class="steam-id">STEAM_1:1:935325296</td><td>BunnyHop</td><td>SMAC</td><td><span class="badge badge-suspect">ПОДОЗРЕНИЕ</span></td></tr>
-                <!-- 3 -->
-                <tr><td>13.06 – 26.06</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:1:615400981">cantlost</a></td><td class="steam-id">STEAM_1:1:615400981</td><td>BunnyHop (×2)</td><td>Lilac + SMAC</td><td><span class="badge badge-ban">БАН (×2)</span></td></tr>
-                <!-- 4 -->
-                <tr><td>16.06</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:1:59424645">damner</a></td><td class="steam-id">STEAM_1:1:59424645</td><td>Aimbot (Autoshoot)</td><td>Lilac</td><td><span class="badge badge-suspect">ПОДОЗРЕНИЕ</span></td></tr>
-                <!-- 5 -->
-                <tr><td>18.06</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:1:27262762">-=[StreetFlash]=-</a></td><td class="steam-id">STEAM_1:1:27262762</td><td>BunnyHop (×3)</td><td>SMAC</td><td><span class="badge badge-suspect">ПОДОЗРЕНИЕ (×3)</span></td></tr>
-                <!-- 6 -->
-                <tr><td>19.06</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:0:181501932">It</a></td><td class="steam-id">STEAM_1:0:181501932</td><td>Aimbot (Deviation: 47°)</td><td>SMAC</td><td><span class="badge badge-suspect">ПОДОЗРЕНИЕ</span></td></tr>
-                <!-- 7 -->
-                <tr><td>21.06</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:0:799559716">Ghost</a></td><td class="steam-id">STEAM_1:0:799559716</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
-                <!-- 8 -->
-                <tr><td>22.06</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:0:926933437">NICVE-PRO.2013</a></td><td class="steam-id">STEAM_1:0:926933437</td><td>Speedhack</td><td>SMAC</td><td><span class="badge badge-suspect">ПОДОЗРЕНИЕ</span></td></tr>
-                <!-- 9 -->
-                <tr><td>22.06</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:1:64110244">M@rgo</a></td><td class="steam-id">STEAM_1:1:64110244</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
-                <!-- 10 -->
-                <tr><td>23.06</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:0:681685357">alehpronud</a></td><td class="steam-id">STEAM_1:0:681685357</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
-                <!-- 11 -->
-                <tr><td>23.06</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:0:461925150">супер романтика</a></td><td class="steam-id">STEAM_1:0:461925150</td><td>BunnyHop (Bhops: 20)</td><td>Lilac</td><td><span class="badge badge-ban">БАН</span></td></tr>
-                <!-- 12 -->
-                <tr><td>28.06</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:1:35874000">Willy Fox</a></td><td class="steam-id">STEAM_1:1:35874000</td><td>Спам команд (-jimp)</td><td>SMAC</td><td><span class="badge badge-kick">КИК</span></td></tr>
-                <!-- 13 -->
-                <tr><td>28.06</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:1:218044541">Masлиna</a></td><td class="steam-id">STEAM_1:1:218044541</td><td>BunnyHop</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
-                <!-- 14 -->
-                <tr><td>02.07</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:1:449508622">Les</a></td><td class="steam-id">STEAM_1:1:449508622</td><td>Подозрение + Auto-Fire</td><td>Lilac + SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
-                <!-- 15 -->
-                <tr><td>03.07</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:0:83509211">ReffyPoo</a></td><td class="steam-id">STEAM_1:0:83509211</td><td>Спам команд (bugpause)</td><td>SMAC</td><td><span class="badge badge-kick">КИК</span></td></tr>
-                <!-- 16 -->
-                <tr><td>04.07</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:0:901495913">Moxxie</a></td><td class="steam-id">STEAM_1:0:901495913</td><td>Auto-Fire</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
-                <!-- 17 -->
-                <tr><td>04.07</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:1:949843564">kami</a></td><td class="steam-id">STEAM_1:1:949843564</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
-                <!-- 18 -->
-                <tr><td>05.07</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:0:879395933">5</a></td><td class="steam-id">STEAM_1:0:879395933</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
-                <!-- 19 -->
-                <tr><td>05.07</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:1:364762701">TROFIM_STEKLOVATA</a></td><td class="steam-id">STEAM_1:1:364762701</td><td>Спам команд (joy_variable_frametime)</td><td>SMAC</td><td><span class="badge badge-kick">КИК</span></td></tr>
-                <!-- 20 -->
-                <tr><td>09.07</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:1:418814752">ℓυcү ♪ ♫</a></td><td class="steam-id">STEAM_1:1:418814752</td><td>Aimbot (Angle-Repeat ×2)</td><td>Lilac</td><td><span class="badge badge-suspect">ПОДОЗРЕНИЕ (×2)</span></td></tr>
-                <!-- 21 -->
-                <tr><td>10.07</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:1:523895160">5 pos nyasha <3</a></td><td class="steam-id">STEAM_1:1:523895160</td><td>Auto-Fire</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
-                <!-- 22 -->
-                <tr><td>10.07</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:1:86827071">Hand$ome Devil</a></td><td class="steam-id">STEAM_1:1:86827071</td><td>BunnyHop</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
-                <!-- 23 -->
-                <tr><td>12.07</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:0:846514764">Da sepp</a></td><td class="steam-id">STEAM_1:0:846514764</td><td>Aimbot (Autoshoot) + Auto-Fire</td><td>Lilac + SMAC</td><td><span class="badge badge-ban">БАН (SMAC)</span> + <span class="badge badge-suspect">ПОДОЗР. (Lilac)</span></td></tr>
-                <!-- 24 -->
-                <tr><td>17.07</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:1:622630204">vemiu</a></td><td class="steam-id">STEAM_1:1:622630204</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
-                <!-- 25 -->
-                <tr><td>22.07</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:1:773958329">VerW</a></td><td class="steam-id">STEAM_1:1:773958329</td><td>Macro Auto-Shoot (4 детекта)</td><td>Lilac</td><td><span class="badge badge-detect">ДЕТЕКТЫ, БЕЗ БАНА</span></td></tr>
-                <!-- 26 -->
-                <tr><td>24.07</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:0:790543909">bless</a></td><td class="steam-id">STEAM_1:0:790543909</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
-                <!-- 27 -->
-                <tr><td>28.07</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:1:80886589">Ruslaniti</a></td><td class="steam-id">STEAM_1:1:80886589</td><td>Auto-Fire</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
-                <!-- 28 -->
-                <tr><td>07.08</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:1:920884622">петля времени 333</a></td><td class="steam-id">STEAM_1:1:920884622</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
-                <!-- 29 -->
-                <tr><td>13.08</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:1:378152486">inc</a></td><td class="steam-id">STEAM_1:1:378152486</td><td>Bhop</td><td>Lilac</td><td><span class="badge badge-ban">БАН</span></td></tr>
-                <!-- 30 -->
-                <tr><td>16.08</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:1:642174354">ℍ𝕣𝕚𝕤𝕥𝕚𝕒𝕟</a></td><td class="steam-id">STEAM_1:1:642174354</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
-                <!-- 31 -->
-                <tr><td>18.08 – 25.08</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:1:403430657">kl / пп</a></td><td class="steam-id">STEAM_1:1:403430657</td><td>Macro Auto-Jump (5 + 4 детектов)</td><td>Lilac</td><td><span class="badge badge-detect">ДЕТЕКТЫ, БЕЗ БАНА</span></td></tr>
-                <!-- 32 -->
-                <tr><td>22.08</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:1:919086356">TrjJ27</a></td><td class="steam-id">STEAM_1:1:919086356</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
-                <!-- 33 -->
-                <tr><td>25.08</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:0:176362383">NIKITA_PRO</a></td><td class="steam-id">STEAM_1:0:176362383</td><td>Spinhack (подозрение)</td><td>SMAC</td><td><span class="badge badge-suspect">ПОДОЗРЕНИЕ</span></td></tr>
-                <!-- 34 -->
-                <tr><td>29.08</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:0:930062316">xxet</a></td><td class="steam-id">STEAM_1:0:930062316</td><td>ConVar r_aspectratio</td><td>SMAC</td><td><span class="badge badge-ban">БАН</span></td></tr>
-                <!-- 35 -->
-                <tr><td>30.08</td><td><a href="#" class="profile-link" data-steamid="STEAM_1:1:542865297">VinnY_DanJ</a></td><td class="steam-id">STEAM_1:1:542865297</td><td>Bhop (BunnyHop)</td><td>Lilac</td><td><span class="badge badge-ban">БАН</span></td></tr>
+
+                <!-- 2. Little -->
+                <tr>
+                    <td class="td-date">11.06</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:1:935325296" target="_blank">Little</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:1:935325296</td>
+                    <td class="td-violation">BunnyHop</td>
+                    <td>SMAC</td>
+                    <td><span class="badge badge-suspect">ПОДОЗРЕНИЕ</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            'Little',
+                            'STEAM_1:1:935325296',
+                            '11.06',
+                            'BunnyHop',
+                            'SMAC',
+                            'ПОДОЗРЕНИЕ',
+                            '[smac_autotrigger] Suspected of using auto-trigger cheat: BunnyHop'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 3. cantlost -->
+                <tr>
+                    <td class="td-date">13.06 – 26.06</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:1:615400981" target="_blank">cantlost</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:1:615400981</td>
+                    <td class="td-violation">BunnyHop (×2)</td>
+                    <td>Lilac + SMAC</td>
+                    <td><span class="badge badge-ban">БАН (×2)</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            'cantlost',
+                            'STEAM_1:1:615400981',
+                            '13.06 – 26.06',
+                            'BunnyHop (×2)',
+                            'Lilac + SMAC',
+                            'БАН (×2)',
+                            '[lilac] Bhop detected (Bhops: 12, JumpTicks: 14); [smac] BunnyHop detected'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 4. damner -->
+                <tr>
+                    <td class="td-date">16.06</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:1:59424645" target="_blank">damner</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:1:59424645</td>
+                    <td class="td-violation">Aimbot (Autoshoot)</td>
+                    <td>Lilac</td>
+                    <td><span class="badge badge-suspect">ПОДОЗРЕНИЕ</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            'damner',
+                            'STEAM_1:1:59424645',
+                            '16.06',
+                            'Aimbot (Autoshoot)',
+                            'Lilac',
+                            'ПОДОЗРЕНИЕ',
+                            '[lilac] Suspected of using aimbot (Autoshoot)'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 5. StreetFlash -->
+                <tr>
+                    <td class="td-date">18.06</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:1:27262762" target="_blank">-=[StreetFlash]=-</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:1:27262762</td>
+                    <td class="td-violation">BunnyHop (×3)</td>
+                    <td>SMAC</td>
+                    <td><span class="badge badge-suspect">ПОДОЗРЕНИЕ (×3)</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            '-=[StreetFlash]=-',
+                            'STEAM_1:1:27262762',
+                            '18.06',
+                            'BunnyHop (×3)',
+                            'SMAC',
+                            'ПОДОЗРЕНИЕ (×3)',
+                            '[smac_autotrigger] Suspected of using auto-trigger cheat: BunnyHop (3 times)'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 6. It -->
+                <tr>
+                    <td class="td-date">19.06</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:0:181501932" target="_blank">It</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:0:181501932</td>
+                    <td class="td-violation">Aimbot (Deviation: 47°)</td>
+                    <td>SMAC</td>
+                    <td><span class="badge badge-suspect">ПОДОЗРЕНИЕ</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            'It',
+                            'STEAM_1:0:181501932',
+                            '19.06',
+                            'Aimbot (Deviation: 47°)',
+                            'SMAC',
+                            'ПОДОЗРЕНИЕ',
+                            '[smac_aimbot] Suspected of using aimbot (Deviation: 47°, Weapon: weapon_sniper_military)'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 7. Ghost -->
+                <tr>
+                    <td class="td-date">21.06</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:0:799559716" target="_blank">Ghost</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:0:799559716</td>
+                    <td class="td-violation">ConVar r_aspectratio</td>
+                    <td>SMAC</td>
+                    <td><span class="badge badge-ban">БАН</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            'Ghost',
+                            'STEAM_1:0:799559716',
+                            '21.06',
+                            'ConVar r_aspectratio',
+                            'SMAC',
+                            'БАН',
+                            '[smac_cvars] Banned for failing checks on convar \"r_aspectratio\" with invalid value'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 8. NICVE-PRO.2013 -->
+                <tr>
+                    <td class="td-date">22.06</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:0:926933437" target="_blank">NICVE-PRO.2013</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:0:926933437</td>
+                    <td class="td-violation">Speedhack</td>
+                    <td>SMAC</td>
+                    <td><span class="badge badge-suspect">ПОДОЗРЕНИЕ</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            'NICVE-PRO.2013',
+                            'STEAM_1:0:926933437',
+                            '22.06',
+                            'Speedhack',
+                            'SMAC',
+                            'ПОДОЗРЕНИЕ',
+                            '[smac_speedhack] Suspected of using speedhack'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 9. M@rgo -->
+                <tr>
+                    <td class="td-date">22.06</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:1:64110244" target="_blank">M@rgo</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:1:64110244</td>
+                    <td class="td-violation">ConVar r_aspectratio</td>
+                    <td>SMAC</td>
+                    <td><span class="badge badge-ban">БАН</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            'M@rgo',
+                            'STEAM_1:1:64110244',
+                            '22.06',
+                            'ConVar r_aspectratio',
+                            'SMAC',
+                            'БАН',
+                            '[smac_cvars] Banned for failing checks on convar \"r_aspectratio\" with invalid value'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 10. alehpronud -->
+                <tr>
+                    <td class="td-date">23.06</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:0:681685357" target="_blank">alehpronud</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:0:681685357</td>
+                    <td class="td-violation">ConVar r_aspectratio</td>
+                    <td>SMAC</td>
+                    <td><span class="badge badge-ban">БАН</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            'alehpronud',
+                            'STEAM_1:0:681685357',
+                            '23.06',
+                            'ConVar r_aspectratio',
+                            'SMAC',
+                            'БАН',
+                            '[smac_cvars] Banned for failing checks on convar \"r_aspectratio\" with invalid value'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 11. супер романтика -->
+                <tr>
+                    <td class="td-date">23.06</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:0:461925150" target="_blank">супер романтика</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:0:461925150</td>
+                    <td class="td-violation">BunnyHop (Bhops: 20)</td>
+                    <td>Lilac</td>
+                    <td><span class="badge badge-ban">БАН</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            'супер романтика',
+                            'STEAM_1:0:461925150',
+                            '23.06',
+                            'BunnyHop (Bhops: 20)',
+                            'Lilac',
+                            'БАН',
+                            '[lilac] Bhop detected (Bhops: 20, JumpTicks: 21)'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 12. Willy Fox -->
+                <tr>
+                    <td class="td-date">28.06</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:1:35874000" target="_blank">Willy Fox</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:1:35874000</td>
+                    <td class="td-violation">Спам команд (-jimp)</td>
+                    <td>SMAC</td>
+                    <td><span class="badge badge-kick">КИК</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            'Willy Fox',
+                            'STEAM_1:1:35874000',
+                            '28.06',
+                            'Spam (-jimp)',
+                            'SMAC',
+                            'КИК',
+                            '[smac_commands] Kicked for spamming: -jimp'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 13. Masлиna -->
+                <tr>
+                    <td class="td-date">28.06</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:1:218044541" target="_blank">Masлиna</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:1:218044541</td>
+                    <td class="td-violation">BunnyHop</td>
+                    <td>SMAC</td>
+                    <td><span class="badge badge-ban">БАН</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            'Masлиna',
+                            'STEAM_1:1:218044541',
+                            '28.06',
+                            'BunnyHop',
+                            'SMAC',
+                            'БАН',
+                            '[smac_autotrigger] Banned for using auto-trigger cheat: BunnyHop'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 14. Les -->
+                <tr>
+                    <td class="td-date">02.07</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:1:449508622" target="_blank">Les</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:1:449508622</td>
+                    <td class="td-violation">Подозрение + Auto-Fire</td>
+                    <td>Lilac + SMAC</td>
+                    <td><span class="badge badge-ban">БАН</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            'Les',
+                            'STEAM_1:1:449508622',
+                            '02.07',
+                            'Auto-Fire',
+                            'SMAC + Lilac',
+                            'БАН',
+                            '[lilac] Aimbot suspect; [smac_autotrigger] Banned for Auto-Fire'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 15. ReffyPoo -->
+                <tr>
+                    <td class="td-date">03.07</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:0:83509211" target="_blank">ReffyPoo</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:0:83509211</td>
+                    <td class="td-violation">Спам команд (bugpause)</td>
+                    <td>SMAC</td>
+                    <td><span class="badge badge-kick">КИК</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            'ReffyPoo',
+                            'STEAM_1:0:83509211',
+                            '03.07',
+                            'Spam (bugpause)',
+                            'SMAC',
+                            'КИК',
+                            '[smac_commands] Kicked for spamming: bugpause'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 16. Moxxie -->
+                <tr>
+                    <td class="td-date">04.07</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:0:901495913" target="_blank">Moxxie</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:0:901495913</td>
+                    <td class="td-violation">Auto-Fire</td>
+                    <td>SMAC</td>
+                    <td><span class="badge badge-ban">БАН</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            'Moxxie',
+                            'STEAM_1:0:901495913',
+                            '04.07',
+                            'Auto-Fire',
+                            'SMAC',
+                            'БАН',
+                            '[smac_autotrigger] Banned for using auto-trigger cheat: Auto-Fire'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 17. kami -->
+                <tr>
+                    <td class="td-date">04.07</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:1:949843564" target="_blank">kami</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:1:949843564</td>
+                    <td class="td-violation">ConVar r_aspectratio</td>
+                    <td>SMAC</td>
+                    <td><span class="badge badge-ban">БАН</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            'kami',
+                            'STEAM_1:1:949843564',
+                            '04.07',
+                            'ConVar r_aspectratio',
+                            'SMAC',
+                            'БАН',
+                            '[smac_cvars] Banned for failing checks on convar \"r_aspectratio\" with invalid value'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 18. 5 -->
+                <tr>
+                    <td class="td-date">05.07</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:0:879395933" target="_blank">5</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:0:879395933</td>
+                    <td class="td-violation">ConVar r_aspectratio</td>
+                    <td>SMAC</td>
+                    <td><span class="badge badge-ban">БАН</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            '5',
+                            'STEAM_1:0:879395933',
+                            '05.07',
+                            'ConVar r_aspectratio',
+                            'SMAC',
+                            'БАН',
+                            '[smac_cvars] Banned for failing checks on convar \"r_aspectratio\" with invalid value'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 19. TROFIM_STEKLOVATA -->
+                <tr>
+                    <td class="td-date">05.07</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:1:364762701" target="_blank">TROFIM_STEKLOVATA</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:1:364762701</td>
+                    <td class="td-violation">Спам команд (joy_variable_frametime)</td>
+                    <td>SMAC</td>
+                    <td><span class="badge badge-kick">КИК</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            'TROFIM_STEKLOVATA',
+                            'STEAM_1:1:364762701',
+                            '05.07',
+                            'Spam (joy_variable_frametime)',
+                            'SMAC',
+                            'КИК',
+                            '[smac_commands] Kicked for spamming: joy_variable_frametime'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 20. ℓυcү -->
+                <tr>
+                    <td class="td-date">09.07</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:1:418814752" target="_blank">ℓυcү ♪ ♫</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:1:418814752</td>
+                    <td class="td-violation">Aimbot (Angle-Repeat ×2)</td>
+                    <td>Lilac</td>
+                    <td><span class="badge badge-suspect">ПОДОЗРЕНИЕ (×2)</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            'ℓυcү ♪ ♫',
+                            'STEAM_1:1:418814752',
+                            '09.07',
+                            'Aimbot (Angle-Repeat ×2)',
+                            'Lilac',
+                            'ПОДОЗРЕНИЕ (×2)',
+                            '[lilac] Aimbot detected (Angle-Repeat, 2 times)'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 21. 5 pos nyasha -->
+                <tr>
+                    <td class="td-date">10.07</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:1:523895160" target="_blank">5 pos nyasha <3</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:1:523895160</td>
+                    <td class="td-violation">Auto-Fire</td>
+                    <td>SMAC</td>
+                    <td><span class="badge badge-ban">БАН</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            '5 pos nyasha <3',
+                            'STEAM_1:1:523895160',
+                            '10.07',
+                            'Auto-Fire',
+                            'SMAC',
+                            'БАН',
+                            '[smac_autotrigger] Banned for using auto-trigger cheat: Auto-Fire'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 22. Hand$ome Devil -->
+                <tr>
+                    <td class="td-date">10.07</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:1:86827071" target="_blank">Hand$ome Devil</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:1:86827071</td>
+                    <td class="td-violation">BunnyHop</td>
+                    <td>SMAC</td>
+                    <td><span class="badge badge-ban">БАН</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            'Hand$ome Devil',
+                            'STEAM_1:1:86827071',
+                            '10.07',
+                            'BunnyHop',
+                            'SMAC',
+                            'БАН',
+                            '[smac_autotrigger] Banned for using auto-trigger cheat: BunnyHop'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 23. Da sepp -->
+                <tr>
+                    <td class="td-date">12.07</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:0:846514764" target="_blank">Da sepp</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:0:846514764</td>
+                    <td class="td-violation">Aimbot (Autoshoot) + Auto-Fire</td>
+                    <td>Lilac + SMAC</td>
+                    <td><span class="badge badge-ban">БАН (SMAC)</span> + <span class="badge badge-suspect">ПОДОЗР.</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            'Da sepp',
+                            'STEAM_1:0:846514764',
+                            '12.07',
+                            'Aimbot + Auto-Fire',
+                            'SMAC + Lilac',
+                            'БАН',
+                            '[lilac] Aimbot suspect; [smac_autotrigger] Banned for Auto-Fire'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 24. vemiu -->
+                <tr>
+                    <td class="td-date">17.07</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:1:622630204" target="_blank">vemiu</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:1:622630204</td>
+                    <td class="td-violation">ConVar r_aspectratio</td>
+                    <td>SMAC</td>
+                    <td><span class="badge badge-ban">БАН</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            'vemiu',
+                            'STEAM_1:1:622630204',
+                            '17.07',
+                            'ConVar r_aspectratio',
+                            'SMAC',
+                            'БАН',
+                            '[smac_cvars] Banned for failing checks on convar \"r_aspectratio\" with invalid value'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 25. VerW -->
+                <tr>
+                    <td class="td-date">22.07</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:1:773958329" target="_blank">VerW</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:1:773958329</td>
+                    <td class="td-violation">Macro Auto-Shoot (4 детекта)</td>
+                    <td>Lilac</td>
+                    <td><span class="badge badge-detect">ДЕТЕКТЫ, БЕЗ БАНА</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            'VerW',
+                            'STEAM_1:1:773958329',
+                            '22.07',
+                            'Macro Auto-Shoot (4 detections)',
+                            'Lilac',
+                            'ДЕТЕКТЫ, БЕЗ БАНА',
+                            '[lilac] Macro Auto-Shoot detected (4 times)'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 26. bless -->
+                <tr>
+                    <td class="td-date">24.07</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:0:790543909" target="_blank">bless</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:0:790543909</td>
+                    <td class="td-violation">ConVar r_aspectratio</td>
+                    <td>SMAC</td>
+                    <td><span class="badge badge-ban">БАН</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            'bless',
+                            'STEAM_1:0:790543909',
+                            '24.07',
+                            'ConVar r_aspectratio',
+                            'SMAC',
+                            'БАН',
+                            '[smac_cvars] Banned for failing checks on convar \"r_aspectratio\" with invalid value'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 27. Ruslaniti -->
+                <tr>
+                    <td class="td-date">28.07</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:1:80886589" target="_blank">Ruslaniti</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:1:80886589</td>
+                    <td class="td-violation">Auto-Fire</td>
+                    <td>SMAC</td>
+                    <td><span class="badge badge-ban">БАН</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            'Ruslaniti',
+                            'STEAM_1:1:80886589',
+                            '28.07',
+                            'Auto-Fire',
+                            'SMAC',
+                            'БАН',
+                            '[smac_autotrigger] Banned for using auto-trigger cheat: Auto-Fire'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 28. петля времени 333 -->
+                <tr>
+                    <td class="td-date">07.08</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:1:920884622" target="_blank">петля времени 333</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:1:920884622</td>
+                    <td class="td-violation">ConVar r_aspectratio</td>
+                    <td>SMAC</td>
+                    <td><span class="badge badge-ban">БАН</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            'петля времени 333',
+                            'STEAM_1:1:920884622',
+                            '07.08',
+                            'ConVar r_aspectratio',
+                            'SMAC',
+                            'БАН',
+                            '[smac_cvars] Banned for failing checks on convar \"r_aspectratio\" with invalid value'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 29. inc -->
+                <tr>
+                    <td class="td-date">13.08</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:1:378152486" target="_blank">inc</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:1:378152486</td>
+                    <td class="td-violation">Bhop</td>
+                    <td>Lilac</td>
+                    <td><span class="badge badge-ban">БАН</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            'inc',
+                            'STEAM_1:1:378152486',
+                            '13.08',
+                            'Bhop',
+                            'Lilac',
+                            'БАН',
+                            '[lilac] Bhop detected (Detection: 2, Bhops: 5, JumpTicks: 11)'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 30. ℍ𝕣𝕚𝕤𝕥𝕚𝕒𝕟 -->
+                <tr>
+                    <td class="td-date">16.08</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:1:642174354" target="_blank">ℍ𝕣𝕚𝕤𝕥𝕚𝕒𝕟</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:1:642174354</td>
+                    <td class="td-violation">ConVar r_aspectratio</td>
+                    <td>SMAC</td>
+                    <td><span class="badge badge-ban">БАН</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            'ℍ𝕣𝕚𝕤𝕥𝕚𝕒𝕟',
+                            'STEAM_1:1:642174354',
+                            '16.08',
+                            'ConVar r_aspectratio',
+                            'SMAC',
+                            'БАН',
+                            '[smac_cvars] Banned for failing checks on convar \"r_aspectratio\" with invalid value'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 31. kl / пп -->
+                <tr>
+                    <td class="td-date">18.08 – 25.08</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:1:403430657" target="_blank">kl / пп</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:1:403430657</td>
+                    <td class="td-violation">Macro Auto-Jump (5 + 4 детектов)</td>
+                    <td>Lilac</td>
+                    <td><span class="badge badge-detect">ДЕТЕКТЫ, БЕЗ БАНА</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            'kl / пп',
+                            'STEAM_1:1:403430657',
+                            '18.08 – 25.08',
+                            'Macro Auto-Jump (9 detections)',
+                            'Lilac',
+                            'ДЕТЕКТЫ, БЕЗ БАНА',
+                            '[lilac] Macro Auto-Jump detected (5 times on 18.08, 4 times on 25.08)'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 32. TrjJ27 -->
+                <tr>
+                    <td class="td-date">22.08</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:1:919086356" target="_blank">TrjJ27</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:1:919086356</td>
+                    <td class="td-violation">ConVar r_aspectratio</td>
+                    <td>SMAC</td>
+                    <td><span class="badge badge-ban">БАН</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            'TrjJ27',
+                            'STEAM_1:1:919086356',
+                            '22.08',
+                            'ConVar r_aspectratio',
+                            'SMAC',
+                            'БАН',
+                            '[smac_cvars] Banned for failing checks on convar \"r_aspectratio\" with invalid value'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 33. NIKITA_PRO -->
+                <tr>
+                    <td class="td-date">25.08</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:0:176362383" target="_blank">NIKITA_PRO</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:0:176362383</td>
+                    <td class="td-violation">Spinhack (подозрение)</td>
+                    <td>SMAC</td>
+                    <td><span class="badge badge-suspect">ПОДОЗРЕНИЕ</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            'NIKITA_PRO',
+                            'STEAM_1:0:176362383',
+                            '25.08',
+                            'Spinhack (suspect)',
+                            'SMAC',
+                            'ПОДОЗРЕНИЕ',
+                            '[smac_spinhack] Suspected of using spinhack'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 34. xxet -->
+                <tr>
+                    <td class="td-date">29.08</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:0:930062316" target="_blank">xxet</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:0:930062316</td>
+                    <td class="td-violation">ConVar r_aspectratio</td>
+                    <td>SMAC</td>
+                    <td><span class="badge badge-ban">БАН</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            'xxet',
+                            'STEAM_1:0:930062316',
+                            '29.08',
+                            'ConVar r_aspectratio',
+                            'SMAC',
+                            'БАН',
+                            '[smac_cvars] Banned for failing checks on convar \"r_aspectratio\" with invalid value'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 35. VinnY_DanJ -->
+                <tr>
+                    <td class="td-date">30.08</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:1:542865297" target="_blank">VinnY_DanJ</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:1:542865297</td>
+                    <td class="td-violation">Bhop (BunnyHop)</td>
+                    <td>Lilac</td>
+                    <td><span class="badge badge-ban">БАН</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            'VinnY_DanJ',
+                            'STEAM_1:1:542865297',
+                            '30.08',
+                            'Bhop (BunnyHop)',
+                            'Lilac',
+                            'БАН',
+                            '[lilac] Bhop detected (Detection: 2, Bhops: 8, JumpTicks: 10)'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
+                <!-- 36. Icesl1me -->
+                <tr>
+                    <td class="td-date">03.09</td>
+                    <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:0:495775697" target="_blank">Icesl1me</a></td>
+                    <td class="steam-id steamid-cell">STEAM_1:0:495775697</td>
+                    <td class="td-violation">ConVar r_aspectratio</td>
+                    <td>SMAC</td>
+                    <td><span class="badge badge-ban">БАН</span></td>
+                    <td class="action-cell">
+                        <button class="btn-report" onclick="copyReport(
+                            'Icesl1me',
+                            'STEAM_1:0:495775697',
+                            '03.09',
+                            'ConVar r_aspectratio',
+                            'SMAC',
+                            'БАН',
+                            '[smac_cvars] Banned for failing checks on convar \"r_aspectratio\" with invalid value -1082130432'
+                        )">📋 Репорт</button>
+                    </td>
+                </tr>
+
             </tbody>
         </table>
     </div>
 
-    <!-- ===== НИЖНИЙ БЛОК ===== -->
+    <!-- ===== БАННЕР ВНИЗУ ===== -->
     <div class="report-block">
         <div class="title">Очистим игру от читеров!</div>
-
-        <div class="step"><strong>1.</strong> Кликни на <strong>никнейм</strong> любого нарушителя — ты перейдёшь на его профиль в Steam.<br>Нажми <strong>«Ещё» → «Пожаловаться» → «Читерство в игре»</strong>.</div>
-
-        <div class="step"><strong>2.</strong> В поле описания укажи единый шаблон:</div>
-
-        <div class="template-box" id="reportTemplate">
-            <span class="line1">Cheating on community server. Using forbidden convars and game exploits</span>
-            <span class="line2">to bypass anti-cheat checks on a dedicated Left 4 Dead 2 server. Please lower trust factor and restrict account.</span>
-        </div>
-
-        <div class="copy-row">
-            <button class="copy-btn-small" id="copyBtn" onclick="copyTemplate()">📋 Скопировать шаблон</button>
-        </div>
-
-        <div class="bottom-text">
-            <span class="highlight-red">Чем больше жалоб</span> — тем выше шанс, что Valve заблокирует аккаунт читера!
-        </div>
+        <div class="step"><strong>1.</strong> Нажми <strong>«📋 Репорт»</strong> рядом с нарушителем — скопируется готовый текст жалобы.</div>
+        <div class="step"><strong>2.</strong> Перейди в <strong>Steam → Профиль игрока → «Ещё» → «Пожаловаться» → «Читерство в игре»</strong>.</div>
+        <div class="step"><strong>3.</strong> Вставь скопированный текст в поле описания и отправь.</div>
+        <div class="step" style="margin-top:6px;"><span class="highlight-red">Чем больше жалоб</span> — тем выше шанс, что Valve заблокирует аккаунт читера!</div>
     </div>
-    <!-- ================================= -->
 
     <div class="footer-note">
-        ⚡ <strong>Всего записей:</strong> 35 · <strong>Банов:</strong> 24 · <strong>Подозрений:</strong> 7 · <strong>Киков:</strong> 3 · <strong>Детектов без бана:</strong> 2<br>
+        ⚡ <strong>Всего записей:</strong> 36 · <strong>Банов:</strong> 25 · <strong>Подозрений:</strong> 7 · <strong>Киков:</strong> 3 · <strong>Детектов без бана:</strong> 2<br>
         <span style="font-size:12px; color:#656d76;">📌 Примечание: Игроки <strong>kl</strong> и <strong>пп</strong> — один и тот же человек (SteamID: STEAM_1:1:403430657).</span><br>
         © 2026 · TWDi Античит-мониторинг · Все нарушители занесены в «Доску позора»
     </div>
 </div>
 
-<!-- КОД СЧЁТЧИКА SITEVIEWS -->
-<script
-    src="https://unpkg.com/siteviews@2.1.2/dist/index.js"
-    type="application/javascript"
-    scriptfor="siteviews"
-    project-name="doska-pozora"
-    output-element-id="views"
-></script>
+<script src="https://unpkg.com/siteviews@2.1.2/dist/index.js" type="application/javascript" scriptfor="siteviews" project-name="doska-pozora" output-element-id="views"></script>
 
-<!-- АВТОМАТИЧЕСКОЕ ПРЕОБРАЗОВАНИЕ STEAMID В ССЫЛКИ -->
 <script>
     function steamIdToProfileUrl(steamId) {
         const parts = steamId.split(':');
@@ -405,30 +1071,63 @@
         });
     });
 
-    function copyTemplate() {
-        const text = document.getElementById('reportTemplate').innerText;
-        navigator.clipboard.writeText(text).then(() => {
-            const btn = document.getElementById('copyBtn');
-            btn.textContent = '✅ Скопировано!';
-            btn.classList.add('copied');
-            setTimeout(() => {
-                btn.textContent = '📋 Скопировать шаблон';
-                btn.classList.remove('copied');
-            }, 2500);
-        }).catch(() => {
-            const range = document.createRange();
-            range.selectNode(document.getElementById('reportTemplate'));
-            window.getSelection().removeAllRanges();
-            window.getSelection().addRange(range);
-            document.execCommand('copy');
-            const btn = document.getElementById('copyBtn');
-            btn.textContent = '✅ Скопировано!';
-            btn.classList.add('copied');
-            setTimeout(() => {
-                btn.textContent = '📋 Скопировать шаблон';
-                btn.classList.remove('copied');
-            }, 2500);
-        });
+    function copyReport(nick, steamId, date, violation, anticheat, result, log) {
+        const template = `Subject: Cheating report – Left 4 Dead 2 – use of forbidden convars and exploits on a dedicated community server
+
+Game: Left 4 Dead 2
+Server: Dedicated community server (TWDi)
+Player nickname: ${nick}
+SteamID: ${steamId}
+Date of incident: ${date} (detected)
+
+Violation: ${violation}
+Anti-cheat system: ${anticheat}
+Result: ${result}
+
+Log excerpt from server anti-cheat (SMAC / Lilac):
+${log}
+
+This player was automatically detected and banned by server-side anti-cheat plugins (SMAC + Lilac). The gameplay session was recorded via the server's demo system.
+
+Request:
+Please investigate this account for cheating and apply appropriate enforcement action.
+
+Evidence available on request: demo file, full server logs.`;
+
+        // ========== РАБОЧИЙ МЕХАНИЗМ СТАРОЙ КНОПКИ ==========
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(template).then(() => {
+                const btn = event.target;
+                const originalText = btn.textContent;
+                btn.textContent = '✅ Скопировано!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.classList.remove('copied');
+                }, 2500);
+            }).catch(() => {
+                fallbackCopy(template);
+            });
+        } else {
+            fallbackCopy(template);
+        }
+    }
+
+    function fallbackCopy(text) {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        const btn = event.target;
+        const originalText = btn.textContent;
+        btn.textContent = '✅ Скопировано!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+            btn.textContent = originalText;
+            btn.classList.remove('copied');
+        }, 2500);
     }
 </script>
 
