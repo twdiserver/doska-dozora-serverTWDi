@@ -101,6 +101,7 @@
             font-size: 13px;
             color: #0969da;
             letter-spacing: 0.3px;
+            white-space: nowrap;
         }
         .badge {
             display: inline-block;
@@ -108,6 +109,7 @@
             border-radius: 20px;
             font-weight: 600;
             font-size: 11px;
+            white-space: nowrap;
         }
         .badge-ban { background: #dafbe1; color: #1a7f37; }
         .badge-kick { background: #ffd8b5; color: #bc4c00; }
@@ -129,13 +131,13 @@
 
         .btn-report {
             display: inline-block;
-            background: #b22234;
+            background: #1a7f37;
             color: #fff;
             border: none;
-            padding: 3px 10px;
+            padding: 4px 12px;
             border-radius: 4px;
             font-weight: 600;
-            font-size: 11px;
+            font-size: 12px;
             cursor: pointer;
             transition: background 0.2s;
             text-decoration: none;
@@ -143,10 +145,10 @@
             touch-action: manipulation;
         }
         .btn-report:hover {
-            background: #8a1a28;
+            background: #0f5a28;
         }
         .btn-report.copied {
-            background: #1a7f37;
+            background: #b22234;
         }
 
         .report-block {
@@ -209,7 +211,8 @@
         }
         .steamid-cell {
             font-size: 12px;
-            word-break: break-all;
+            word-break: keep-all;
+            white-space: nowrap;
         }
         .action-cell {
             white-space: nowrap;
@@ -258,7 +261,7 @@
                         <span class="record-badge">⭐ РЕКОРДСМЕН</span>
                     </td>
                     <td class="steam-id steamid-cell">STEAM_1:0:596248935</td>
-                    <td class="td-violation">Auto-Fire (×6) + Aimbot (×2)</td>
+                    <td class="td-violation">Auto-Fire (×6) + Aimbot</td>
                     <td>SMAC + Lilac</td>
                     <td><span class="badge badge-ban">БАН (×6)</span> + <span class="badge badge-suspect">ПОДОЗР.</span></td>
                     <td class="action-cell">
@@ -266,10 +269,10 @@
                             '(АтОмНыЙ ДиЛдАк)',
                             'STEAM_1:0:596248935',
                             '22.06 – 17.07',
-                            'Auto-Fire (×6) + Aimbot (×2)',
+                            'Auto-Fire (×6) + Aimbot',
                             'SMAC + Lilac',
                             'БАН (×6)',
-                            '[smac_autotrigger] Auto-Fire detected multiple times; [lilac] Aimbot detected'
+                            '[smac_autotrigger] Auto-Fire ×6; [lilac] Aimbot'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -290,7 +293,7 @@
                             'ConVar r_aspectratio + Aimbot',
                             'SMAC + Lilac',
                             'БАН (×2)',
-                            '[smac_cvars] Banned for failing checks on convar \"r_aspectratio\" with invalid value -1082130432'
+                            '[smac_cvars] r_aspectratio invalid value -1082130432'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -311,7 +314,7 @@
                             'BunnyHop',
                             'SMAC',
                             'ПОДОЗРЕНИЕ',
-                            '[smac_autotrigger] Suspected of using auto-trigger cheat: BunnyHop'
+                            '[smac_autotrigger] BunnyHop'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -332,7 +335,7 @@
                             'BunnyHop (×2)',
                             'Lilac + SMAC',
                             'БАН (×2)',
-                            '[lilac] Bhop detected (Bhops: 12, JumpTicks: 14); [smac] BunnyHop detected'
+                            '[lilac] Bhop (Bhops:12); [smac] BunnyHop'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -353,7 +356,7 @@
                             'Aimbot (Autoshoot)',
                             'Lilac',
                             'ПОДОЗРЕНИЕ',
-                            '[lilac] Suspected of using aimbot (Autoshoot)'
+                            '[lilac] Aimbot (Autoshoot)'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -374,7 +377,7 @@
                             'BunnyHop (×3)',
                             'SMAC',
                             'ПОДОЗРЕНИЕ (×3)',
-                            '[smac_autotrigger] Suspected of using auto-trigger cheat: BunnyHop (3 times)'
+                            '[smac_autotrigger] BunnyHop ×3'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -395,7 +398,7 @@
                             'Aimbot (Deviation: 47°)',
                             'SMAC',
                             'ПОДОЗРЕНИЕ',
-                            '[smac_aimbot] Suspected of using aimbot (Deviation: 47°, Weapon: weapon_sniper_military)'
+                            '[smac_aimbot] Deviation: 47°, weapon_sniper_military'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -416,7 +419,7 @@
                             'ConVar r_aspectratio',
                             'SMAC',
                             'БАН',
-                            '[smac_cvars] Banned for failing checks on convar \"r_aspectratio\" with invalid value'
+                            '[smac_cvars] r_aspectratio invalid value'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -437,7 +440,7 @@
                             'Speedhack',
                             'SMAC',
                             'ПОДОЗРЕНИЕ',
-                            '[smac_speedhack] Suspected of using speedhack'
+                            '[smac_speedhack] Speedhack'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -458,7 +461,7 @@
                             'ConVar r_aspectratio',
                             'SMAC',
                             'БАН',
-                            '[smac_cvars] Banned for failing checks on convar \"r_aspectratio\" with invalid value'
+                            '[smac_cvars] r_aspectratio invalid value'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -479,7 +482,7 @@
                             'ConVar r_aspectratio',
                             'SMAC',
                             'БАН',
-                            '[smac_cvars] Banned for failing checks on convar \"r_aspectratio\" with invalid value'
+                            '[smac_cvars] r_aspectratio invalid value'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -500,7 +503,7 @@
                             'BunnyHop (Bhops: 20)',
                             'Lilac',
                             'БАН',
-                            '[lilac] Bhop detected (Bhops: 20, JumpTicks: 21)'
+                            '[lilac] Bhop (Bhops:20, JumpTicks:21)'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -521,7 +524,7 @@
                             'Spam (-jimp)',
                             'SMAC',
                             'КИК',
-                            '[smac_commands] Kicked for spamming: -jimp'
+                            '[smac_commands] Spam -jimp'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -542,7 +545,7 @@
                             'BunnyHop',
                             'SMAC',
                             'БАН',
-                            '[smac_autotrigger] Banned for using auto-trigger cheat: BunnyHop'
+                            '[smac_autotrigger] BunnyHop'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -563,7 +566,7 @@
                             'Auto-Fire',
                             'SMAC + Lilac',
                             'БАН',
-                            '[lilac] Aimbot suspect; [smac_autotrigger] Banned for Auto-Fire'
+                            '[lilac] Aimbot suspect; [smac] Auto-Fire'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -584,7 +587,7 @@
                             'Spam (bugpause)',
                             'SMAC',
                             'КИК',
-                            '[smac_commands] Kicked for spamming: bugpause'
+                            '[smac_commands] Spam bugpause'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -605,7 +608,7 @@
                             'Auto-Fire',
                             'SMAC',
                             'БАН',
-                            '[smac_autotrigger] Banned for using auto-trigger cheat: Auto-Fire'
+                            '[smac_autotrigger] Auto-Fire'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -626,7 +629,7 @@
                             'ConVar r_aspectratio',
                             'SMAC',
                             'БАН',
-                            '[smac_cvars] Banned for failing checks on convar \"r_aspectratio\" with invalid value'
+                            '[smac_cvars] r_aspectratio invalid value'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -647,7 +650,7 @@
                             'ConVar r_aspectratio',
                             'SMAC',
                             'БАН',
-                            '[smac_cvars] Banned for failing checks on convar \"r_aspectratio\" with invalid value'
+                            '[smac_cvars] r_aspectratio invalid value'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -668,7 +671,7 @@
                             'Spam (joy_variable_frametime)',
                             'SMAC',
                             'КИК',
-                            '[smac_commands] Kicked for spamming: joy_variable_frametime'
+                            '[smac_commands] Spam joy_variable_frametime'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -689,7 +692,7 @@
                             'Aimbot (Angle-Repeat ×2)',
                             'Lilac',
                             'ПОДОЗРЕНИЕ (×2)',
-                            '[lilac] Aimbot detected (Angle-Repeat, 2 times)'
+                            '[lilac] Aimbot Angle-Repeat ×2'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -710,7 +713,7 @@
                             'Auto-Fire',
                             'SMAC',
                             'БАН',
-                            '[smac_autotrigger] Banned for using auto-trigger cheat: Auto-Fire'
+                            '[smac_autotrigger] Auto-Fire'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -731,7 +734,7 @@
                             'BunnyHop',
                             'SMAC',
                             'БАН',
-                            '[smac_autotrigger] Banned for using auto-trigger cheat: BunnyHop'
+                            '[smac_autotrigger] BunnyHop'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -741,7 +744,7 @@
                     <td class="td-date">12.07</td>
                     <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:0:846514764" target="_blank">Da sepp</a></td>
                     <td class="steam-id steamid-cell">STEAM_1:0:846514764</td>
-                    <td class="td-violation">Aimbot (Autoshoot) + Auto-Fire</td>
+                    <td class="td-violation">Aimbot + Auto-Fire</td>
                     <td>Lilac + SMAC</td>
                     <td><span class="badge badge-ban">БАН (SMAC)</span> + <span class="badge badge-suspect">ПОДОЗР.</span></td>
                     <td class="action-cell">
@@ -752,7 +755,7 @@
                             'Aimbot + Auto-Fire',
                             'SMAC + Lilac',
                             'БАН',
-                            '[lilac] Aimbot suspect; [smac_autotrigger] Banned for Auto-Fire'
+                            '[lilac] Aimbot suspect; [smac] Auto-Fire'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -773,7 +776,7 @@
                             'ConVar r_aspectratio',
                             'SMAC',
                             'БАН',
-                            '[smac_cvars] Banned for failing checks on convar \"r_aspectratio\" with invalid value'
+                            '[smac_cvars] r_aspectratio invalid value'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -794,7 +797,7 @@
                             'Macro Auto-Shoot (4 detections)',
                             'Lilac',
                             'ДЕТЕКТЫ, БЕЗ БАНА',
-                            '[lilac] Macro Auto-Shoot detected (4 times)'
+                            '[lilac] Macro Auto-Shoot ×4'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -815,7 +818,7 @@
                             'ConVar r_aspectratio',
                             'SMAC',
                             'БАН',
-                            '[smac_cvars] Banned for failing checks on convar \"r_aspectratio\" with invalid value'
+                            '[smac_cvars] r_aspectratio invalid value'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -836,7 +839,7 @@
                             'Auto-Fire',
                             'SMAC',
                             'БАН',
-                            '[smac_autotrigger] Banned for using auto-trigger cheat: Auto-Fire'
+                            '[smac_autotrigger] Auto-Fire'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -857,7 +860,7 @@
                             'ConVar r_aspectratio',
                             'SMAC',
                             'БАН',
-                            '[smac_cvars] Banned for failing checks on convar \"r_aspectratio\" with invalid value'
+                            '[smac_cvars] r_aspectratio invalid value'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -878,7 +881,7 @@
                             'Bhop',
                             'Lilac',
                             'БАН',
-                            '[lilac] Bhop detected (Detection: 2, Bhops: 5, JumpTicks: 11)'
+                            '[lilac] Bhop (Detection:2, Bhops:5)'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -899,7 +902,7 @@
                             'ConVar r_aspectratio',
                             'SMAC',
                             'БАН',
-                            '[smac_cvars] Banned for failing checks on convar \"r_aspectratio\" with invalid value'
+                            '[smac_cvars] r_aspectratio invalid value'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -909,7 +912,7 @@
                     <td class="td-date">18.08 – 25.08</td>
                     <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:1:403430657" target="_blank">kl / пп</a></td>
                     <td class="steam-id steamid-cell">STEAM_1:1:403430657</td>
-                    <td class="td-violation">Macro Auto-Jump (5 + 4 детектов)</td>
+                    <td class="td-violation">Macro Auto-Jump (9 детектов)</td>
                     <td>Lilac</td>
                     <td><span class="badge badge-detect">ДЕТЕКТЫ, БЕЗ БАНА</span></td>
                     <td class="action-cell">
@@ -920,7 +923,7 @@
                             'Macro Auto-Jump (9 detections)',
                             'Lilac',
                             'ДЕТЕКТЫ, БЕЗ БАНА',
-                            '[lilac] Macro Auto-Jump detected (5 times on 18.08, 4 times on 25.08)'
+                            '[lilac] Macro Auto-Jump ×9'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -941,7 +944,7 @@
                             'ConVar r_aspectratio',
                             'SMAC',
                             'БАН',
-                            '[smac_cvars] Banned for failing checks on convar \"r_aspectratio\" with invalid value'
+                            '[smac_cvars] r_aspectratio invalid value'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -962,7 +965,7 @@
                             'Spinhack (suspect)',
                             'SMAC',
                             'ПОДОЗРЕНИЕ',
-                            '[smac_spinhack] Suspected of using spinhack'
+                            '[smac_spinhack] Spinhack'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -983,7 +986,7 @@
                             'ConVar r_aspectratio',
                             'SMAC',
                             'БАН',
-                            '[smac_cvars] Banned for failing checks on convar \"r_aspectratio\" with invalid value'
+                            '[smac_cvars] r_aspectratio invalid value'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -1004,12 +1007,12 @@
                             'Bhop (BunnyHop)',
                             'Lilac',
                             'БАН',
-                            '[lilac] Bhop detected (Detection: 2, Bhops: 8, JumpTicks: 10)'
+                            '[lilac] Bhop (Detection:2, Bhops:8)'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
 
-                <!-- 36. Icesl1me -->
+                <!-- ===== 36. Icesl1me (НОВЫЙ) ===== -->
                 <tr>
                     <td class="td-date">03.09</td>
                     <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:0:495775697" target="_blank">Icesl1me</a></td>
@@ -1025,7 +1028,7 @@
                             'ConVar r_aspectratio',
                             'SMAC',
                             'БАН',
-                            '[smac_cvars] Banned for failing checks on convar \"r_aspectratio\" with invalid value -1082130432'
+                            '[smac_cvars] r_aspectratio invalid value -1082130432'
                         )">📋 Репорт</button>
                     </td>
                 </tr>
@@ -1094,7 +1097,6 @@ Please investigate this account for cheating and apply appropriate enforcement a
 
 Evidence available on request: demo file, full server logs.`;
 
-        // ========== РАБОЧИЙ МЕХАНИЗМ СТАРОЙ КНОПКИ ==========
         if (navigator.clipboard && navigator.clipboard.writeText) {
             navigator.clipboard.writeText(template).then(() => {
                 const btn = event.target;
