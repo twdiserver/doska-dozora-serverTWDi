@@ -139,7 +139,7 @@
             font-weight: 600;
             font-size: 12px;
             cursor: pointer;
-            transition: background 0.2s;
+            transition: background 0.2s, color 0.2s;
             text-decoration: none;
             white-space: nowrap;
             touch-action: manipulation;
@@ -265,15 +265,12 @@
                     <td>SMAC + Lilac</td>
                     <td><span class="badge badge-ban">БАН (×6)</span> + <span class="badge badge-suspect">ПОДОЗР.</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            '(АтОмНыЙ ДиЛдАк)',
-                            'STEAM_1:0:596248935',
-                            '22.06 – 17.07',
-                            'Auto-Fire (×6) + Aimbot',
-                            'SMAC + Lilac',
-                            'БАН (×6)',
-                            '[smac_autotrigger] Auto-Fire ×6; [lilac] Aimbot'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="(АтОмНыЙ ДиЛдАк)" 
+                                data-steamid="STEAM_1:0:596248935" 
+                                data-violation="Auto-Fire (×6) + Aimbot">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -282,19 +279,16 @@
                     <td class="td-date">06.06 – 18.08</td>
                     <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:1:925144230" target="_blank">ТОЛСТЫЙ КОТ / ZOV</a></td>
                     <td class="steam-id steamid-cell">STEAM_1:1:925144230</td>
-                    <td class="td-violation">ConVar + Aimbot (×2)</td>
+                    <td class="td-violation">ConVar + Aimbot</td>
                     <td>SMAC + Lilac</td>
                     <td><span class="badge badge-ban">БАН (×2)</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            'ТОЛСТЫЙ КОТ / ZOV',
-                            'STEAM_1:1:925144230',
-                            '06.06 – 18.08',
-                            'ConVar r_aspectratio + Aimbot',
-                            'SMAC + Lilac',
-                            'БАН (×2)',
-                            '[smac_cvars] r_aspectratio invalid value -1082130432'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="ТОЛСТЫЙ КОТ / ZOV" 
+                                data-steamid="STEAM_1:1:925144230" 
+                                data-violation="ConVar + Aimbot">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -307,15 +301,12 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-suspect">ПОДОЗРЕНИЕ</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            'Little',
-                            'STEAM_1:1:935325296',
-                            '11.06',
-                            'BunnyHop',
-                            'SMAC',
-                            'ПОДОЗРЕНИЕ',
-                            '[smac_autotrigger] BunnyHop'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="Little" 
+                                data-steamid="STEAM_1:1:935325296" 
+                                data-violation="BunnyHop">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -328,15 +319,12 @@
                     <td>Lilac + SMAC</td>
                     <td><span class="badge badge-ban">БАН (×2)</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            'cantlost',
-                            'STEAM_1:1:615400981',
-                            '13.06 – 26.06',
-                            'BunnyHop (×2)',
-                            'Lilac + SMAC',
-                            'БАН (×2)',
-                            '[lilac] Bhop (Bhops:12); [smac] BunnyHop'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="cantlost" 
+                                data-steamid="STEAM_1:1:615400981" 
+                                data-violation="BunnyHop (×2)">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -349,15 +337,12 @@
                     <td>Lilac</td>
                     <td><span class="badge badge-suspect">ПОДОЗРЕНИЕ</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            'damner',
-                            'STEAM_1:1:59424645',
-                            '16.06',
-                            'Aimbot (Autoshoot)',
-                            'Lilac',
-                            'ПОДОЗРЕНИЕ',
-                            '[lilac] Aimbot (Autoshoot)'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="damner" 
+                                data-steamid="STEAM_1:1:59424645" 
+                                data-violation="Aimbot (Autoshoot)">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -370,15 +355,12 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-suspect">ПОДОЗРЕНИЕ (×3)</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            '-=[StreetFlash]=-',
-                            'STEAM_1:1:27262762',
-                            '18.06',
-                            'BunnyHop (×3)',
-                            'SMAC',
-                            'ПОДОЗРЕНИЕ (×3)',
-                            '[smac_autotrigger] BunnyHop ×3'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="-=[StreetFlash]=-" 
+                                data-steamid="STEAM_1:1:27262762" 
+                                data-violation="BunnyHop (×3)">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -391,15 +373,12 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-suspect">ПОДОЗРЕНИЕ</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            'It',
-                            'STEAM_1:0:181501932',
-                            '19.06',
-                            'Aimbot (Deviation: 47°)',
-                            'SMAC',
-                            'ПОДОЗРЕНИЕ',
-                            '[smac_aimbot] Deviation: 47°, weapon_sniper_military'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="It" 
+                                data-steamid="STEAM_1:0:181501932" 
+                                data-violation="Aimbot (Deviation: 47°)">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -412,15 +391,12 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            'Ghost',
-                            'STEAM_1:0:799559716',
-                            '21.06',
-                            'ConVar r_aspectratio',
-                            'SMAC',
-                            'БАН',
-                            '[smac_cvars] r_aspectratio invalid value'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="Ghost" 
+                                data-steamid="STEAM_1:0:799559716" 
+                                data-violation="ConVar r_aspectratio">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -433,15 +409,12 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-suspect">ПОДОЗРЕНИЕ</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            'NICVE-PRO.2013',
-                            'STEAM_1:0:926933437',
-                            '22.06',
-                            'Speedhack',
-                            'SMAC',
-                            'ПОДОЗРЕНИЕ',
-                            '[smac_speedhack] Speedhack'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="NICVE-PRO.2013" 
+                                data-steamid="STEAM_1:0:926933437" 
+                                data-violation="Speedhack">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -454,15 +427,12 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            'M@rgo',
-                            'STEAM_1:1:64110244',
-                            '22.06',
-                            'ConVar r_aspectratio',
-                            'SMAC',
-                            'БАН',
-                            '[smac_cvars] r_aspectratio invalid value'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="M@rgo" 
+                                data-steamid="STEAM_1:1:64110244" 
+                                data-violation="ConVar r_aspectratio">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -475,15 +445,12 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            'alehpronud',
-                            'STEAM_1:0:681685357',
-                            '23.06',
-                            'ConVar r_aspectratio',
-                            'SMAC',
-                            'БАН',
-                            '[smac_cvars] r_aspectratio invalid value'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="alehpronud" 
+                                data-steamid="STEAM_1:0:681685357" 
+                                data-violation="ConVar r_aspectratio">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -496,15 +463,12 @@
                     <td>Lilac</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            'супер романтика',
-                            'STEAM_1:0:461925150',
-                            '23.06',
-                            'BunnyHop (Bhops: 20)',
-                            'Lilac',
-                            'БАН',
-                            '[lilac] Bhop (Bhops:20, JumpTicks:21)'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="супер романтика" 
+                                data-steamid="STEAM_1:0:461925150" 
+                                data-violation="BunnyHop (Bhops: 20)">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -513,19 +477,16 @@
                     <td class="td-date">28.06</td>
                     <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:1:35874000" target="_blank">Willy Fox</a></td>
                     <td class="steam-id steamid-cell">STEAM_1:1:35874000</td>
-                    <td class="td-violation">Спам команд (-jimp)</td>
+                    <td class="td-violation">Spam (-jimp)</td>
                     <td>SMAC</td>
                     <td><span class="badge badge-kick">КИК</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            'Willy Fox',
-                            'STEAM_1:1:35874000',
-                            '28.06',
-                            'Spam (-jimp)',
-                            'SMAC',
-                            'КИК',
-                            '[smac_commands] Spam -jimp'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="Willy Fox" 
+                                data-steamid="STEAM_1:1:35874000" 
+                                data-violation="Spam (-jimp)">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -538,15 +499,12 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            'Masлиna',
-                            'STEAM_1:1:218044541',
-                            '28.06',
-                            'BunnyHop',
-                            'SMAC',
-                            'БАН',
-                            '[smac_autotrigger] BunnyHop'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="Masлиna" 
+                                data-steamid="STEAM_1:1:218044541" 
+                                data-violation="BunnyHop">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -555,19 +513,16 @@
                     <td class="td-date">02.07</td>
                     <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:1:449508622" target="_blank">Les</a></td>
                     <td class="steam-id steamid-cell">STEAM_1:1:449508622</td>
-                    <td class="td-violation">Подозрение + Auto-Fire</td>
-                    <td>Lilac + SMAC</td>
+                    <td class="td-violation">Auto-Fire</td>
+                    <td>SMAC + Lilac</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            'Les',
-                            'STEAM_1:1:449508622',
-                            '02.07',
-                            'Auto-Fire',
-                            'SMAC + Lilac',
-                            'БАН',
-                            '[lilac] Aimbot suspect; [smac] Auto-Fire'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="Les" 
+                                data-steamid="STEAM_1:1:449508622" 
+                                data-violation="Auto-Fire">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -576,19 +531,16 @@
                     <td class="td-date">03.07</td>
                     <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:0:83509211" target="_blank">ReffyPoo</a></td>
                     <td class="steam-id steamid-cell">STEAM_1:0:83509211</td>
-                    <td class="td-violation">Спам команд (bugpause)</td>
+                    <td class="td-violation">Spam (bugpause)</td>
                     <td>SMAC</td>
                     <td><span class="badge badge-kick">КИК</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            'ReffyPoo',
-                            'STEAM_1:0:83509211',
-                            '03.07',
-                            'Spam (bugpause)',
-                            'SMAC',
-                            'КИК',
-                            '[smac_commands] Spam bugpause'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="ReffyPoo" 
+                                data-steamid="STEAM_1:0:83509211" 
+                                data-violation="Spam (bugpause)">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -601,15 +553,12 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            'Moxxie',
-                            'STEAM_1:0:901495913',
-                            '04.07',
-                            'Auto-Fire',
-                            'SMAC',
-                            'БАН',
-                            '[smac_autotrigger] Auto-Fire'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="Moxxie" 
+                                data-steamid="STEAM_1:0:901495913" 
+                                data-violation="Auto-Fire">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -622,15 +571,12 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            'kami',
-                            'STEAM_1:1:949843564',
-                            '04.07',
-                            'ConVar r_aspectratio',
-                            'SMAC',
-                            'БАН',
-                            '[smac_cvars] r_aspectratio invalid value'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="kami" 
+                                data-steamid="STEAM_1:1:949843564" 
+                                data-violation="ConVar r_aspectratio">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -643,15 +589,12 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            '5',
-                            'STEAM_1:0:879395933',
-                            '05.07',
-                            'ConVar r_aspectratio',
-                            'SMAC',
-                            'БАН',
-                            '[smac_cvars] r_aspectratio invalid value'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="5" 
+                                data-steamid="STEAM_1:0:879395933" 
+                                data-violation="ConVar r_aspectratio">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -660,19 +603,16 @@
                     <td class="td-date">05.07</td>
                     <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:1:364762701" target="_blank">TROFIM_STEKLOVATA</a></td>
                     <td class="steam-id steamid-cell">STEAM_1:1:364762701</td>
-                    <td class="td-violation">Спам команд (joy_variable_frametime)</td>
+                    <td class="td-violation">Spam (joy_variable_frametime)</td>
                     <td>SMAC</td>
                     <td><span class="badge badge-kick">КИК</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            'TROFIM_STEKLOVATA',
-                            'STEAM_1:1:364762701',
-                            '05.07',
-                            'Spam (joy_variable_frametime)',
-                            'SMAC',
-                            'КИК',
-                            '[smac_commands] Spam joy_variable_frametime'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="TROFIM_STEKLOVATA" 
+                                data-steamid="STEAM_1:1:364762701" 
+                                data-violation="Spam (joy_variable_frametime)">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -685,15 +625,12 @@
                     <td>Lilac</td>
                     <td><span class="badge badge-suspect">ПОДОЗРЕНИЕ (×2)</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            'ℓυcү ♪ ♫',
-                            'STEAM_1:1:418814752',
-                            '09.07',
-                            'Aimbot (Angle-Repeat ×2)',
-                            'Lilac',
-                            'ПОДОЗРЕНИЕ (×2)',
-                            '[lilac] Aimbot Angle-Repeat ×2'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="ℓυcү ♪ ♫" 
+                                data-steamid="STEAM_1:1:418814752" 
+                                data-violation="Aimbot (Angle-Repeat ×2)">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -706,15 +643,12 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            '5 pos nyasha <3',
-                            'STEAM_1:1:523895160',
-                            '10.07',
-                            'Auto-Fire',
-                            'SMAC',
-                            'БАН',
-                            '[smac_autotrigger] Auto-Fire'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="5 pos nyasha <3" 
+                                data-steamid="STEAM_1:1:523895160" 
+                                data-violation="Auto-Fire">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -727,15 +661,12 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            'Hand$ome Devil',
-                            'STEAM_1:1:86827071',
-                            '10.07',
-                            'BunnyHop',
-                            'SMAC',
-                            'БАН',
-                            '[smac_autotrigger] BunnyHop'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="Hand$ome Devil" 
+                                data-steamid="STEAM_1:1:86827071" 
+                                data-violation="BunnyHop">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -748,15 +679,12 @@
                     <td>Lilac + SMAC</td>
                     <td><span class="badge badge-ban">БАН (SMAC)</span> + <span class="badge badge-suspect">ПОДОЗР.</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            'Da sepp',
-                            'STEAM_1:0:846514764',
-                            '12.07',
-                            'Aimbot + Auto-Fire',
-                            'SMAC + Lilac',
-                            'БАН',
-                            '[lilac] Aimbot suspect; [smac] Auto-Fire'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="Da sepp" 
+                                data-steamid="STEAM_1:0:846514764" 
+                                data-violation="Aimbot + Auto-Fire">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -769,15 +697,12 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            'vemiu',
-                            'STEAM_1:1:622630204',
-                            '17.07',
-                            'ConVar r_aspectratio',
-                            'SMAC',
-                            'БАН',
-                            '[smac_cvars] r_aspectratio invalid value'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="vemiu" 
+                                data-steamid="STEAM_1:1:622630204" 
+                                data-violation="ConVar r_aspectratio">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -790,15 +715,12 @@
                     <td>Lilac</td>
                     <td><span class="badge badge-detect">ДЕТЕКТЫ, БЕЗ БАНА</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            'VerW',
-                            'STEAM_1:1:773958329',
-                            '22.07',
-                            'Macro Auto-Shoot (4 detections)',
-                            'Lilac',
-                            'ДЕТЕКТЫ, БЕЗ БАНА',
-                            '[lilac] Macro Auto-Shoot ×4'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="VerW" 
+                                data-steamid="STEAM_1:1:773958329" 
+                                data-violation="Macro Auto-Shoot (4 detections)">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -811,15 +733,12 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            'bless',
-                            'STEAM_1:0:790543909',
-                            '24.07',
-                            'ConVar r_aspectratio',
-                            'SMAC',
-                            'БАН',
-                            '[smac_cvars] r_aspectratio invalid value'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="bless" 
+                                data-steamid="STEAM_1:0:790543909" 
+                                data-violation="ConVar r_aspectratio">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -832,15 +751,12 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            'Ruslaniti',
-                            'STEAM_1:1:80886589',
-                            '28.07',
-                            'Auto-Fire',
-                            'SMAC',
-                            'БАН',
-                            '[smac_autotrigger] Auto-Fire'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="Ruslaniti" 
+                                data-steamid="STEAM_1:1:80886589" 
+                                data-violation="Auto-Fire">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -853,15 +769,12 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            'петля времени 333',
-                            'STEAM_1:1:920884622',
-                            '07.08',
-                            'ConVar r_aspectratio',
-                            'SMAC',
-                            'БАН',
-                            '[smac_cvars] r_aspectratio invalid value'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="петля времени 333" 
+                                data-steamid="STEAM_1:1:920884622" 
+                                data-violation="ConVar r_aspectratio">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -874,15 +787,12 @@
                     <td>Lilac</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            'inc',
-                            'STEAM_1:1:378152486',
-                            '13.08',
-                            'Bhop',
-                            'Lilac',
-                            'БАН',
-                            '[lilac] Bhop (Detection:2, Bhops:5)'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="inc" 
+                                data-steamid="STEAM_1:1:378152486" 
+                                data-violation="Bhop">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -895,15 +805,12 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            'ℍ𝕣𝕚𝕤𝕥𝕚𝕒𝕟',
-                            'STEAM_1:1:642174354',
-                            '16.08',
-                            'ConVar r_aspectratio',
-                            'SMAC',
-                            'БАН',
-                            '[smac_cvars] r_aspectratio invalid value'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="ℍ𝕣𝕚𝕤𝕥𝕚𝕒𝕟" 
+                                data-steamid="STEAM_1:1:642174354" 
+                                data-violation="ConVar r_aspectratio">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -916,15 +823,12 @@
                     <td>Lilac</td>
                     <td><span class="badge badge-detect">ДЕТЕКТЫ, БЕЗ БАНА</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            'kl / пп',
-                            'STEAM_1:1:403430657',
-                            '18.08 – 25.08',
-                            'Macro Auto-Jump (9 detections)',
-                            'Lilac',
-                            'ДЕТЕКТЫ, БЕЗ БАНА',
-                            '[lilac] Macro Auto-Jump ×9'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="kl / пп" 
+                                data-steamid="STEAM_1:1:403430657" 
+                                data-violation="Macro Auto-Jump (9 detections)">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -937,15 +841,12 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            'TrjJ27',
-                            'STEAM_1:1:919086356',
-                            '22.08',
-                            'ConVar r_aspectratio',
-                            'SMAC',
-                            'БАН',
-                            '[smac_cvars] r_aspectratio invalid value'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="TrjJ27" 
+                                data-steamid="STEAM_1:1:919086356" 
+                                data-violation="ConVar r_aspectratio">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -954,19 +855,16 @@
                     <td class="td-date">25.08</td>
                     <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:0:176362383" target="_blank">NIKITA_PRO</a></td>
                     <td class="steam-id steamid-cell">STEAM_1:0:176362383</td>
-                    <td class="td-violation">Spinhack (подозрение)</td>
+                    <td class="td-violation">Spinhack</td>
                     <td>SMAC</td>
                     <td><span class="badge badge-suspect">ПОДОЗРЕНИЕ</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            'NIKITA_PRO',
-                            'STEAM_1:0:176362383',
-                            '25.08',
-                            'Spinhack (suspect)',
-                            'SMAC',
-                            'ПОДОЗРЕНИЕ',
-                            '[smac_spinhack] Spinhack'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="NIKITA_PRO" 
+                                data-steamid="STEAM_1:0:176362383" 
+                                data-violation="Spinhack">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -979,15 +877,12 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            'xxet',
-                            'STEAM_1:0:930062316',
-                            '29.08',
-                            'ConVar r_aspectratio',
-                            'SMAC',
-                            'БАН',
-                            '[smac_cvars] r_aspectratio invalid value'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="xxet" 
+                                data-steamid="STEAM_1:0:930062316" 
+                                data-violation="ConVar r_aspectratio">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -996,19 +891,16 @@
                     <td class="td-date">30.08</td>
                     <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:1:542865297" target="_blank">VinnY_DanJ</a></td>
                     <td class="steam-id steamid-cell">STEAM_1:1:542865297</td>
-                    <td class="td-violation">Bhop (BunnyHop)</td>
+                    <td class="td-violation">Bhop</td>
                     <td>Lilac</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            'VinnY_DanJ',
-                            'STEAM_1:1:542865297',
-                            '30.08',
-                            'Bhop (BunnyHop)',
-                            'Lilac',
-                            'БАН',
-                            '[lilac] Bhop (Detection:2, Bhops:8)'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="VinnY_DanJ" 
+                                data-steamid="STEAM_1:1:542865297" 
+                                data-violation="Bhop">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -1021,15 +913,12 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" onclick="copyReport(
-                            'Icesl1me',
-                            'STEAM_1:0:495775697',
-                            '03.09',
-                            'ConVar r_aspectratio',
-                            'SMAC',
-                            'БАН',
-                            '[smac_cvars] r_aspectratio invalid value -1082130432'
-                        )">📋 Репорт</button>
+                        <button class="btn-report" 
+                                data-nickname="Icesl1me" 
+                                data-steamid="STEAM_1:0:495775697" 
+                                data-violation="ConVar r_aspectratio">
+                            📋 Репорт
+                        </button>
                     </td>
                 </tr>
 
@@ -1037,18 +926,17 @@
         </table>
     </div>
 
-    <!-- ===== БАННЕР ВНИЗУ ===== -->
+    <!-- ===== БАННЕР ВНИЗУ (ОБНОВЛЁННЫЙ) ===== -->
     <div class="report-block">
         <div class="title">Очистим игру от читеров!</div>
         <div class="step"><strong>1.</strong> Нажми <strong>«📋 Репорт»</strong> рядом с нарушителем — скопируется готовый текст жалобы.</div>
-        <div class="step"><strong>2.</strong> Перейди в <strong>Steam → Профиль игрока → «Ещё» → «Пожаловаться» → «Читерство в игре»</strong>.</div>
+        <div class="step"><strong>2.</strong> Нажми на <strong>никнейм</strong> нарушителя — перейди в его профиль Steam. Далее <strong>«Ещё» → «Пожаловаться»</strong> → выбери <strong>«Пользователь использует читы»</strong> → <strong>«Запросить проверку этого аккаунта»</strong>.</div>
         <div class="step"><strong>3.</strong> Вставь скопированный текст в поле описания и отправь.</div>
         <div class="step" style="margin-top:6px;"><span class="highlight-red">Чем больше жалоб</span> — тем выше шанс, что Valve заблокирует аккаунт читера!</div>
     </div>
 
     <div class="footer-note">
         ⚡ <strong>Всего записей:</strong> 36 · <strong>Банов:</strong> 25 · <strong>Подозрений:</strong> 7 · <strong>Киков:</strong> 3 · <strong>Детектов без бана:</strong> 2<br>
-        <span style="font-size:12px; color:#656d76;">📌 Примечание: Игроки <strong>kl</strong> и <strong>пп</strong> — один и тот же человек (SteamID: STEAM_1:1:403430657).</span><br>
         © 2026 · TWDi Античит-мониторинг · Все нарушители занесены в «Доску позора»
     </div>
 </div>
@@ -1074,63 +962,37 @@
         });
     });
 
-    function copyReport(nick, steamId, date, violation, anticheat, result, log) {
-        const template = `Subject: Cheating report – Left 4 Dead 2 – use of forbidden convars and exploits on a dedicated community server
+    // ===== СКРИПТ ДЛЯ КНОПОК РЕПОРТ =====
+    document.addEventListener('DOMContentLoaded', () => {
+        const reportButtons = document.querySelectorAll('.btn-report');
 
-Game: Left 4 Dead 2
-Server: Dedicated community server (TWDi)
-Player nickname: ${nick}
-SteamID: ${steamId}
-Date of incident: ${date} (detected)
+        reportButtons.forEach(button => {
+            button.addEventListener('click', async (event) => {
+                const nickname = button.getAttribute('data-nickname');
+                const steamid = button.getAttribute('data-steamid');
+                const violation = button.getAttribute('data-violation');
 
-Violation: ${violation}
-Anti-cheat system: ${anticheat}
-Result: ${result}
+                const reportText = `The player "${nickname}" (${steamid}) was detected using automated cheats (${violation}) on a dedicated Left 4 Dead 2 community server (TWDi).\n\nThe user was automatically flagged by server-side anti-cheat tools (SMAC/Lilac). Please review this account's match telemetry for illegal inputs.`;
 
-Log excerpt from server anti-cheat (SMAC / Lilac):
-${log}
+                try {
+                    await navigator.clipboard.writeText(reportText);
+                    
+                    const originalText = button.innerHTML;
+                    button.innerHTML = '✅ Скопировано!';
+                    button.classList.add('copied');
+                    
+                    setTimeout(() => {
+                        button.innerHTML = originalText;
+                        button.classList.remove('copied');
+                    }, 2500);
 
-This player was automatically detected and banned by server-side anti-cheat plugins (SMAC + Lilac). The gameplay session was recorded via the server's demo system.
-
-Request:
-Please investigate this account for cheating and apply appropriate enforcement action.
-
-Evidence available on request: demo file, full server logs.`;
-
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(template).then(() => {
-                const btn = event.target;
-                const originalText = btn.textContent;
-                btn.textContent = '✅ Скопировано!';
-                btn.classList.add('copied');
-                setTimeout(() => {
-                    btn.textContent = originalText;
-                    btn.classList.remove('copied');
-                }, 2500);
-            }).catch(() => {
-                fallbackCopy(template);
+                } catch (err) {
+                    console.error('Не удалось скопировать текст: ', err);
+                    alert('Произошла ошибка при копировании. Пожалуйста, скопируйте текст вручную.');
+                }
             });
-        } else {
-            fallbackCopy(template);
-        }
-    }
-
-    function fallbackCopy(text) {
-        const textarea = document.createElement('textarea');
-        textarea.value = text;
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
-        const btn = event.target;
-        const originalText = btn.textContent;
-        btn.textContent = '✅ Скопировано!';
-        btn.classList.add('copied');
-        setTimeout(() => {
-            btn.textContent = originalText;
-            btn.classList.remove('copied');
-        }, 2500);
-    }
+        });
+    });
 </script>
 
 </body>
