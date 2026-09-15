@@ -26,7 +26,7 @@
         h1 {
             text-align: center;
             color: #b22234;
-            font-size: 34px;
+            font-size: 38px;
             font-weight: 800;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -41,6 +41,23 @@
             margin-bottom: 22px;
         }
         .subtitle span { color: #b22234; font-weight: 600; }
+
+        .intro-block {
+            background: #f8f9fa;
+            border-left: 4px solid #b22234;
+            border-radius: 8px;
+            padding: 18px 22px;
+            margin-bottom: 22px;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #1f2328;
+        }
+        .intro-block p {
+            margin-bottom: 0;
+        }
+        .intro-block strong {
+            color: #b22234;
+        }
 
         .views-counter {
             text-align: center;
@@ -160,10 +177,10 @@
             text-align: center;
         }
         .report-block .title {
-            font-size: 20px;
+            font-size: 24px;
             font-weight: 800;
             color: #b22234;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
         .report-block .step {
             font-size: 14px;
@@ -194,11 +211,6 @@
         .highlight-row:nth-child(even) td {
             background: #f0f7f0 !important;
         }
-        .violation-small {
-            font-size: 12px;
-            color: #656d76;
-            display: block;
-        }
         .record-badge {
             display: inline-block;
             background: #b22234;
@@ -227,13 +239,24 @@
             th, td { padding: 8px 6px; }
             .td-violation { white-space: normal; }
             .steamid-cell { font-size: 11px; }
+            h1 { font-size: 26px; }
+            .intro-block { font-size: 14px; padding: 14px 16px; }
         }
     </style>
 </head>
 <body>
 <div class="container">
-    <h1>⬡ ДОСКА ПОЗОРА ⬡</h1>
-    <div class="subtitle">TWDi · Античит-мониторинг · <span>SMAC + Lilac</span> · 06.06 – 08.09.2026</div>
+    <h1>🧟 ДОСКА ПОЗОРА 🧟</h1>
+    <div class="subtitle">TWDi · Античит-мониторинг · <span>SMAC + Lilac</span> · 06.06 – 13.09.2026</div>
+
+    <div class="intro-block">
+        <p>
+            Это <strong>публичный список нарушителей</strong> игровых серверов <strong>TWDi</strong> 
+            (Left 4 Dead 2). Все игроки в таблице были <strong>автоматически пойманы</strong> 
+            серверными античитами <strong>SMAC</strong> и <strong>Lilac</strong> 
+            на использовании читов, макросов или запрещённых настроек.
+        </p>
+    </div>
 
     <div class="views-counter">
         👁️ Просмотров: <span id="views">Загрузка...</span>
@@ -265,12 +288,7 @@
                     <td>SMAC + Lilac</td>
                     <td><span class="badge badge-ban">БАН (×6)</span> + <span class="badge badge-suspect">ПОДОЗР.</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="(АтОмНыЙ ДиЛдАк)" 
-                                data-steamid="STEAM_1:0:596248935" 
-                                data-violation="Auto-Fire (×6) + Aimbot">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="(АтОмНыЙ ДиЛдАк)" data-steamid="STEAM_1:0:596248935" data-violation="Auto-Fire (×6) + Aimbot">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -283,12 +301,7 @@
                     <td>SMAC + Lilac</td>
                     <td><span class="badge badge-ban">БАН (×2)</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="ТОЛСТЫЙ КОТ / ZOV" 
-                                data-steamid="STEAM_1:1:925144230" 
-                                data-violation="ConVar + Aimbot">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="ТОЛСТЫЙ КОТ / ZOV" data-steamid="STEAM_1:1:925144230" data-violation="ConVar + Aimbot">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -301,12 +314,7 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-suspect">ПОДОЗРЕНИЕ</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="Little" 
-                                data-steamid="STEAM_1:1:935325296" 
-                                data-violation="BunnyHop">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="Little" data-steamid="STEAM_1:1:935325296" data-violation="BunnyHop">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -319,12 +327,7 @@
                     <td>Lilac + SMAC</td>
                     <td><span class="badge badge-ban">БАН (×2)</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="cantlost" 
-                                data-steamid="STEAM_1:1:615400981" 
-                                data-violation="BunnyHop (×2)">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="cantlost" data-steamid="STEAM_1:1:615400981" data-violation="BunnyHop (×2)">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -337,12 +340,7 @@
                     <td>Lilac</td>
                     <td><span class="badge badge-suspect">ПОДОЗРЕНИЕ</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="damner" 
-                                data-steamid="STEAM_1:1:59424645" 
-                                data-violation="Aimbot (Autoshoot)">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="damner" data-steamid="STEAM_1:1:59424645" data-violation="Aimbot (Autoshoot)">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -355,12 +353,7 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-suspect">ПОДОЗРЕНИЕ (×3)</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="-=[StreetFlash]=-" 
-                                data-steamid="STEAM_1:1:27262762" 
-                                data-violation="BunnyHop (×3)">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="-=[StreetFlash]=-" data-steamid="STEAM_1:1:27262762" data-violation="BunnyHop (×3)">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -373,12 +366,7 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-suspect">ПОДОЗРЕНИЕ</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="It" 
-                                data-steamid="STEAM_1:0:181501932" 
-                                data-violation="Aimbot (Deviation: 47°)">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="It" data-steamid="STEAM_1:0:181501932" data-violation="Aimbot (Deviation: 47°)">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -391,12 +379,7 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="Ghost" 
-                                data-steamid="STEAM_1:0:799559716" 
-                                data-violation="ConVar r_aspectratio">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="Ghost" data-steamid="STEAM_1:0:799559716" data-violation="ConVar r_aspectratio">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -409,12 +392,7 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-suspect">ПОДОЗРЕНИЕ</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="NICVE-PRO.2013" 
-                                data-steamid="STEAM_1:0:926933437" 
-                                data-violation="Speedhack">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="NICVE-PRO.2013" data-steamid="STEAM_1:0:926933437" data-violation="Speedhack">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -427,12 +405,7 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="M@rgo" 
-                                data-steamid="STEAM_1:1:64110244" 
-                                data-violation="ConVar r_aspectratio">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="M@rgo" data-steamid="STEAM_1:1:64110244" data-violation="ConVar r_aspectratio">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -445,12 +418,7 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="alehpronud" 
-                                data-steamid="STEAM_1:0:681685357" 
-                                data-violation="ConVar r_aspectratio">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="alehpronud" data-steamid="STEAM_1:0:681685357" data-violation="ConVar r_aspectratio">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -463,12 +431,7 @@
                     <td>Lilac</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="супер романтика" 
-                                data-steamid="STEAM_1:0:461925150" 
-                                data-violation="BunnyHop (Bhops: 20)">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="супер романтика" data-steamid="STEAM_1:0:461925150" data-violation="BunnyHop (Bhops: 20)">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -481,12 +444,7 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-kick">КИК</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="Willy Fox" 
-                                data-steamid="STEAM_1:1:35874000" 
-                                data-violation="Spam (-jimp)">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="Willy Fox" data-steamid="STEAM_1:1:35874000" data-violation="Spam (-jimp)">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -499,12 +457,7 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="Masлиna" 
-                                data-steamid="STEAM_1:1:218044541" 
-                                data-violation="BunnyHop">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="Masлиna" data-steamid="STEAM_1:1:218044541" data-violation="BunnyHop">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -517,12 +470,7 @@
                     <td>SMAC + Lilac</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="Les" 
-                                data-steamid="STEAM_1:1:449508622" 
-                                data-violation="Auto-Fire">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="Les" data-steamid="STEAM_1:1:449508622" data-violation="Auto-Fire">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -535,12 +483,7 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-kick">КИК</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="ReffyPoo" 
-                                data-steamid="STEAM_1:0:83509211" 
-                                data-violation="Spam (bugpause)">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="ReffyPoo" data-steamid="STEAM_1:0:83509211" data-violation="Spam (bugpause)">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -553,12 +496,7 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="Moxxie" 
-                                data-steamid="STEAM_1:0:901495913" 
-                                data-violation="Auto-Fire">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="Moxxie" data-steamid="STEAM_1:0:901495913" data-violation="Auto-Fire">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -571,12 +509,7 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="kami" 
-                                data-steamid="STEAM_1:1:949843564" 
-                                data-violation="ConVar r_aspectratio">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="kami" data-steamid="STEAM_1:1:949843564" data-violation="ConVar r_aspectratio">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -589,12 +522,7 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="5" 
-                                data-steamid="STEAM_1:0:879395933" 
-                                data-violation="ConVar r_aspectratio">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="5" data-steamid="STEAM_1:0:879395933" data-violation="ConVar r_aspectratio">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -607,12 +535,7 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-kick">КИК</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="TROFIM_STEKLOVATA" 
-                                data-steamid="STEAM_1:1:364762701" 
-                                data-violation="Spam (joy_variable_frametime)">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="TROFIM_STEKLOVATA" data-steamid="STEAM_1:1:364762701" data-violation="Spam (joy_variable_frametime)">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -625,12 +548,7 @@
                     <td>Lilac</td>
                     <td><span class="badge badge-suspect">ПОДОЗРЕНИЕ (×2)</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="ℓυcү ♪ ♫" 
-                                data-steamid="STEAM_1:1:418814752" 
-                                data-violation="Aimbot (Angle-Repeat ×2)">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="ℓυcү ♪ ♫" data-steamid="STEAM_1:1:418814752" data-violation="Aimbot (Angle-Repeat ×2)">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -643,12 +561,7 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="5 pos nyasha <3" 
-                                data-steamid="STEAM_1:1:523895160" 
-                                data-violation="Auto-Fire">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="5 pos nyasha <3" data-steamid="STEAM_1:1:523895160" data-violation="Auto-Fire">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -661,12 +574,7 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="Hand$ome Devil" 
-                                data-steamid="STEAM_1:1:86827071" 
-                                data-violation="BunnyHop">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="Hand$ome Devil" data-steamid="STEAM_1:1:86827071" data-violation="BunnyHop">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -679,12 +587,7 @@
                     <td>Lilac + SMAC</td>
                     <td><span class="badge badge-ban">БАН (SMAC)</span> + <span class="badge badge-suspect">ПОДОЗР.</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="Da sepp" 
-                                data-steamid="STEAM_1:0:846514764" 
-                                data-violation="Aimbot + Auto-Fire">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="Da sepp" data-steamid="STEAM_1:0:846514764" data-violation="Aimbot + Auto-Fire">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -697,12 +600,7 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="vemiu" 
-                                data-steamid="STEAM_1:1:622630204" 
-                                data-violation="ConVar r_aspectratio">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="vemiu" data-steamid="STEAM_1:1:622630204" data-violation="ConVar r_aspectratio">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -715,12 +613,7 @@
                     <td>Lilac</td>
                     <td><span class="badge badge-detect">ДЕТЕКТЫ, БЕЗ БАНА</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="VerW" 
-                                data-steamid="STEAM_1:1:773958329" 
-                                data-violation="Macro Auto-Shoot (4 detections)">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="VerW" data-steamid="STEAM_1:1:773958329" data-violation="Macro Auto-Shoot (4 detections)">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -733,12 +626,7 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="bless" 
-                                data-steamid="STEAM_1:0:790543909" 
-                                data-violation="ConVar r_aspectratio">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="bless" data-steamid="STEAM_1:0:790543909" data-violation="ConVar r_aspectratio">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -751,12 +639,7 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="Ruslaniti" 
-                                data-steamid="STEAM_1:1:80886589" 
-                                data-violation="Auto-Fire">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="Ruslaniti" data-steamid="STEAM_1:1:80886589" data-violation="Auto-Fire">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -769,12 +652,7 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="петля времени 333" 
-                                data-steamid="STEAM_1:1:920884622" 
-                                data-violation="ConVar r_aspectratio">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="петля времени 333" data-steamid="STEAM_1:1:920884622" data-violation="ConVar r_aspectratio">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -787,12 +665,7 @@
                     <td>Lilac</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="inc" 
-                                data-steamid="STEAM_1:1:378152486" 
-                                data-violation="Bhop">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="inc" data-steamid="STEAM_1:1:378152486" data-violation="Bhop">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -805,12 +678,7 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="ℍ𝕣𝕚𝕤𝕥𝕚𝕒𝕟" 
-                                data-steamid="STEAM_1:1:642174354" 
-                                data-violation="ConVar r_aspectratio">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="ℍ𝕣𝕚𝕤𝕥𝕚𝕒𝕟" data-steamid="STEAM_1:1:642174354" data-violation="ConVar r_aspectratio">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -823,12 +691,7 @@
                     <td>Lilac</td>
                     <td><span class="badge badge-detect">ДЕТЕКТЫ, БЕЗ БАНА</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="kl / пп" 
-                                data-steamid="STEAM_1:1:403430657" 
-                                data-violation="Macro Auto-Jump (9 detections)">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="kl / пп" data-steamid="STEAM_1:1:403430657" data-violation="Macro Auto-Jump (9 detections)">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -841,12 +704,7 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="TrjJ27" 
-                                data-steamid="STEAM_1:1:919086356" 
-                                data-violation="ConVar r_aspectratio">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="TrjJ27" data-steamid="STEAM_1:1:919086356" data-violation="ConVar r_aspectratio">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -859,12 +717,7 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-suspect">ПОДОЗРЕНИЕ</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="NIKITA_PRO" 
-                                data-steamid="STEAM_1:0:176362383" 
-                                data-violation="Spinhack">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="NIKITA_PRO" data-steamid="STEAM_1:0:176362383" data-violation="Spinhack">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -877,12 +730,7 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="xxet" 
-                                data-steamid="STEAM_1:0:930062316" 
-                                data-violation="ConVar r_aspectratio">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="xxet" data-steamid="STEAM_1:0:930062316" data-violation="ConVar r_aspectratio">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -895,16 +743,11 @@
                     <td>Lilac</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="VinnY_DanJ" 
-                                data-steamid="STEAM_1:1:542865297" 
-                                data-violation="Bhop">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="VinnY_DanJ" data-steamid="STEAM_1:1:542865297" data-violation="Bhop">📋 Репорт</button>
                     </td>
                 </tr>
 
-                <!-- ===== Icesl1me (как cantlost) ===== -->
+                <!-- ===== Icesl1me ===== -->
                 <tr>
                     <td class="td-date">03.09 – 04.09</td>
                     <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:0:495775697" target="_blank">Icesl1me</a></td>
@@ -913,12 +756,7 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН (×2)</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="Icesl1me" 
-                                data-steamid="STEAM_1:0:495775697" 
-                                data-violation="ConVar r_aspectratio (×2)">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="Icesl1me" data-steamid="STEAM_1:0:495775697" data-violation="ConVar r_aspectratio (×2)">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -931,12 +769,7 @@
                     <td>SMAC + Lilac</td>
                     <td><span class="badge badge-ban">БАН (Lilac)</span> + <span class="badge badge-suspect">ПОДОЗР. (SMAC)</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="cepillín" 
-                                data-steamid="STEAM_1:1:770444449" 
-                                data-violation="Speedhack + Bhop">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="cepillín" data-steamid="STEAM_1:1:770444449" data-violation="Speedhack + Bhop">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -949,12 +782,7 @@
                     <td>Lilac</td>
                     <td><span class="badge badge-suspect">ПОДОЗРЕНИЕ (×2)</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="ABIMAEL GUZMAN" 
-                                data-steamid="STEAM_1:0:397699217" 
-                                data-violation="Aimbot (Autoshoot ×2)">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="ABIMAEL GUZMAN" data-steamid="STEAM_1:0:397699217" data-violation="Aimbot (Autoshoot ×2)">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -967,12 +795,7 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="ღ Rose" 
-                                data-steamid="STEAM_1:0:798316216" 
-                                data-violation="ConVar r_aspectratio">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="ღ Rose" data-steamid="STEAM_1:0:798316216" data-violation="ConVar r_aspectratio">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -985,12 +808,7 @@
                     <td>Lilac</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="おばけ" 
-                                data-steamid="STEAM_1:0:375439889" 
-                                data-violation="Bhop">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="おばけ" data-steamid="STEAM_1:0:375439889" data-violation="Bhop">📋 Репорт</button>
                     </td>
                 </tr>
 
@@ -1003,16 +821,11 @@
                     <td>SMAC + Lilac</td>
                     <td><span class="badge badge-suspect">ПОДОЗР. (SMAC)</span> + <span class="badge badge-detect">ДЕТЕКТЫ (Lilac)</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="El Matador" 
-                                data-steamid="STEAM_1:0:571609491" 
-                                data-violation="Speedhack + Macro Auto-Shoot (5 detections)">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="El Matador" data-steamid="STEAM_1:0:571609491" data-violation="Speedhack + Macro Auto-Shoot (5 detections)">📋 Репорт</button>
                     </td>
                 </tr>
 
-                <!-- ===== 42. klei (ОБНОВЛЕНО: БАН) ===== -->
+                <!-- ===== 42. klei ===== -->
                 <tr>
                     <td class="td-date">08.09</td>
                     <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:0:923567382" target="_blank">klei</a></td>
@@ -1021,16 +834,11 @@
                     <td>Lilac</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="klei" 
-                                data-steamid="STEAM_1:0:923567382" 
-                                data-violation="Aimbot">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="klei" data-steamid="STEAM_1:0:923567382" data-violation="Aimbot">📋 Репорт</button>
                     </td>
                 </tr>
 
-                                <!-- ===== 43. denazgrief (НОВЫЙ) ===== -->
+                <!-- ===== 43. denazgrief ===== -->
                 <tr>
                     <td class="td-date">12.09</td>
                     <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:1:461388232" target="_blank">denazgrief</a></td>
@@ -1039,15 +847,11 @@
                     <td>Lilac</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="denazgrief" 
-                                data-steamid="STEAM_1:1:461388232" 
-                                data-violation="Aimbot (Autoshoot + Angle-Repeat ×5)">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="denazgrief" data-steamid="STEAM_1:1:461388232" data-violation="Aimbot (Autoshoot + Angle-Repeat ×5)">📋 Репорт</button>
                     </td>
                 </tr>
-                               <!-- ===== 44. smigol (НОВЫЙ) ===== -->
+
+                <!-- ===== 44. smigol ===== -->
                 <tr>
                     <td class="td-date">13.09</td>
                     <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:1:424380172" target="_blank">smigol</a></td>
@@ -1056,16 +860,11 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="smigol" 
-                                data-steamid="STEAM_1:1:424380172" 
-                                data-violation="ConVar r_aspectratio">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="smigol" data-steamid="STEAM_1:1:424380172" data-violation="ConVar r_aspectratio">📋 Репорт</button>
                     </td>
                 </tr>
 
-                <!-- ===== 45. andrx1089 (НОВЫЙ) ===== -->
+                <!-- ===== 45. andrx1089 ===== -->
                 <tr>
                     <td class="td-date">13.09</td>
                     <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:1:382072733" target="_blank">andrx1089</a></td>
@@ -1074,16 +873,11 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-suspect">ПОДОЗРЕНИЕ</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="andrx1089" 
-                                data-steamid="STEAM_1:1:382072733" 
-                                data-violation="Speedhack">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="andrx1089" data-steamid="STEAM_1:1:382072733" data-violation="Speedhack">📋 Репорт</button>
                     </td>
                 </tr>
 
-                <!-- ===== 46. AU// EL ULTIMO ATAHUALPA (НОВЫЙ) ===== -->
+                <!-- ===== 46. AU// EL ULTIMO ATAHUALPA ===== -->
                 <tr>
                     <td class="td-date">13.09</td>
                     <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:1:641495065" target="_blank">AU// EL ULTIMO ATAHUALPA</a></td>
@@ -1092,16 +886,11 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="AU// EL ULTIMO ATAHUALPA" 
-                                data-steamid="STEAM_1:1:641495065" 
-                                data-violation="ConVar r_aspectratio">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="AU// EL ULTIMO ATAHUALPA" data-steamid="STEAM_1:1:641495065" data-violation="ConVar r_aspectratio">📋 Репорт</button>
                     </td>
                 </tr>
 
-                <!-- ===== 47. Anuel AA Bebecita (НОВЫЙ) ===== -->
+                <!-- ===== 47. Anuel AA Bebecita ===== -->
                 <tr>
                     <td class="td-date">13.09</td>
                     <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:0:929737007" target="_blank">Anuel AA Bebecita</a></td>
@@ -1110,16 +899,11 @@
                     <td>SMAC</td>
                     <td><span class="badge badge-ban">БАН</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="Anuel AA Bebecita" 
-                                data-steamid="STEAM_1:0:929737007" 
-                                data-violation="ConVar r_aspectratio">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="Anuel AA Bebecita" data-steamid="STEAM_1:0:929737007" data-violation="ConVar r_aspectratio">📋 Репорт</button>
                     </td>
                 </tr>
 
-                <!-- ===== 48. Cacha Cholas 3000x (ОБНОВЛЕНО: БАН) ===== -->
+                <!-- ===== 48. Cacha Cholas 3000x ===== -->
                 <tr>
                     <td class="td-date">13.09</td>
                     <td class="td-nick"><a href="#" class="profile-link" data-steamid="STEAM_1:0:845835506" target="_blank">Cacha Cholas 3000x</a></td>
@@ -1128,25 +912,26 @@
                     <td>Lilac</td>
                     <td><span class="badge badge-ban">БАН (вручную)</span></td>
                     <td class="action-cell">
-                        <button class="btn-report" 
-                                data-nickname="Cacha Cholas 3000x" 
-                                data-steamid="STEAM_1:0:845835506" 
-                                data-violation="Macro Auto-Shoot (5 детектов)">
-                            📋 Репорт
-                        </button>
+                        <button class="btn-report" data-nickname="Cacha Cholas 3000x" data-steamid="STEAM_1:0:845835506" data-violation="Macro Auto-Shoot (5 детектов)">📋 Репорт</button>
                     </td>
-                </tr> 
+                </tr>
+
             </tbody>
         </table>
     </div>
 
-    <!-- ===== БАННЕР ВНИЗУ ===== -->
+    <!-- ===== САМЫЙ СМАК — ПРИЗЫВ ВНИЗУ ===== -->
     <div class="report-block">
-        <div class="title">Очистим игру от читеров!</div>
+        <div class="title">🧟💀 ОЧИСТИМ ИГРУ ОТ ЧИТЕРОВ! 💀🧟</div>
         <div class="step"><strong>1.</strong> Нажми <strong>«📋 Репорт»</strong> рядом с нарушителем — скопируется готовый текст жалобы.</div>
         <div class="step"><strong>2.</strong> Нажми на <strong>никнейм</strong> нарушителя — перейди в его профиль Steam. Далее <strong>«Ещё» → «Пожаловаться»</strong> → выбери <strong>«Пользователь использует читы»</strong> → <strong>«Запросить проверку этого аккаунта»</strong>.</div>
         <div class="step"><strong>3.</strong> Вставь скопированный текст в поле описания и отправь.</div>
-        <div class="step" style="margin-top:6px;"><span class="highlight-red">Чем больше жалоб</span> — тем выше шанс, что Valve заблокирует аккаунт читера!</div>
+        <div class="step" style="margin-top:10px; font-size:16px;">
+            <span class="highlight-red">⚡ ЧЕМ БОЛЬШЕ ЖАЛОБ — ТЕМ ВЫШЕ ШАНС, ЧТО VALVE ЗАБЛОКИРУЕТ АККАУНТ ЧИТЕРА! ⚡</span>
+        </div>
+        <div class="step" style="margin-top:8px; font-size:13px; color:#656d76;">
+            Одна жалоба — капля. Тысяча жалоб — бан. Не будь равнодушным.
+        </div>
     </div>
 
     <div class="footer-note">
